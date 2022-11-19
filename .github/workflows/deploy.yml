@@ -10,6 +10,10 @@ jobs:
     name: run
     steps:
       - uses: actions/checkout@v2
+
+      - name: static public
+        run: cmd/hugo
+
       - name: push index
         uses: 0RAJA/algolia-docsearch-upload-action@master
         with:
