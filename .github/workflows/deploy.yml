@@ -7,10 +7,10 @@ on: # 触发此工作流的事件 部署只需要主分支有push时触发
 jobs:
   auto:
     runs-on: ubuntu-latest
-    name: push index
+    name: run
     steps:
       - uses: actions/checkout@v2
-      - name: example
+      - name: push index
         uses: 0RAJA/algolia-docsearch-upload-action@master
         with:
           ADMIN_API_KEY: ${{ secrets.ADMIN_API_KEY }}
