@@ -1,0 +1,20 @@
+name: Deploy to production
+
+on: # 触发此工作流的事件 部署只需要主分支有push时触发
+  push:
+    branches: [master]
+
+jobs:
+  auto:
+    runs-on: ubuntu-latest
+    name: push index
+    steps:
+      - uses: actions/checkout@v2
+      - name: example
+        uses: github.com/0RAJA/algolia-docsearch-upload-action@master
+        with:
+          ADMIN_API_KEY: ${{ secrets.ADMIN_API_KEY }}
+          APPLICATION_ID: ${{ secrets.APPLICATION_ID }}
+          # needs to be inside $GITHUB_WORKSPACE from actions/checkout step
+          FILE_PATH: public/index.json
+          INDEX_NAME: index

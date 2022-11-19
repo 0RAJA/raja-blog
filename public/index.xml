@@ -2,7 +2,7 @@
     <channel>
         <title>raja的blog</title>
         <link>http://example.org/</link>
-        <description>This is my cool site</description>
+        <description>记录raja的美好生活</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>1647193241@qq.com (raja)</managingEditor>
             <webMaster>1647193241@qq.com (raja)</webMaster><lastBuildDate>Sat, 19 Nov 2022 15:44:18 &#43;0800</lastBuildDate>
             <atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
