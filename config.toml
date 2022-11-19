@@ -50,11 +50,11 @@ hasCJKLanguage = true
     title = ""
   [[menu.main]]
     weight = 4
-    identifier = "person"
+    identifier = "abort"
     pre = ""
     post = ""
-    name = "个人"
-    url = "/person/"
+    name = "关于"
+    url = "/abort/"
     title = ""
 # Hugo 解析文档的配置
 [markup]
