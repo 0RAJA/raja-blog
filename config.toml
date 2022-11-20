@@ -70,14 +70,6 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
     title = ""
   [[menu.main]]
     weight = 4
-    identifier = "friends"
-    pre = ""
-    post = ""
-    name = "传送门"
-    url = "/friends/"
-    title = ""
-  [[menu.main]]
-    weight = 5
     identifier = "abort"
     pre = ""
     post = ""
