@@ -2,9 +2,12 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
+            <loc>https://raja-blog.netlify.app/categories/</loc><lastmod>2022-11-20T17:30:23&#43;08:00</lastmod></url><url>
+            <loc>https://raja-blog.netlify.app/tags/post/</loc><lastmod>2022-11-20T17:30:23&#43;08:00</lastmod></url><url>
+            <loc>https://raja-blog.netlify.app/posts/</loc><lastmod>2022-11-20T17:30:23&#43;08:00</lastmod></url><url>
+            <loc>https://raja-blog.netlify.app/</loc><lastmod>2022-11-20T17:30:23&#43;08:00</lastmod></url><url>
+            <loc>https://raja-blog.netlify.app/posts/second_post/</loc><lastmod>2022-11-20T17:30:23&#43;08:00</lastmod></url><url>
+            <loc>https://raja-blog.netlify.app/tags/</loc><lastmod>2022-11-20T17:30:23&#43;08:00</lastmod></url><url>
+            <loc>https://raja-blog.netlify.app/categories/%E6%96%87%E7%AB%A0/</loc><lastmod>2022-11-20T17:30:23&#43;08:00</lastmod></url><url>
             <loc>https://raja-blog.netlify.app/posts/first_post/</loc><lastmod>2022-11-19T23:08:03&#43;08:00</lastmod></url><url>
-            <loc>https://raja-blog.netlify.app/posts/</loc><lastmod>2022-11-19T23:08:03&#43;08:00</lastmod></url><url>
-            <loc>https://raja-blog.netlify.app/</loc><lastmod>2022-11-19T23:08:03&#43;08:00</lastmod></url><url>
-            <loc>https://raja-blog.netlify.app/abort/</loc><lastmod>2022-11-19T22:25:04&#43;08:00</lastmod></url><url>
-            <loc>https://raja-blog.netlify.app/categories/</loc></url><url>
-            <loc>https://raja-blog.netlify.app/tags/</loc></url></urlset>
+            <loc>https://raja-blog.netlify.app/abort/</loc><lastmod>2022-11-19T22:25:04&#43;08:00</lastmod></url></urlset>
