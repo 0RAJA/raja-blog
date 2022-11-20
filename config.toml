@@ -82,6 +82,10 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
   [markup.highlight]
     # false 是必要的设置 (https://github.com/dillonzq/LoveIt/issues/158)
     noClasses = false
+  [markup.tableOfContents]
+    ordered = false
+    startLevel = 1
+    endLevel = 6
 
 [outputs]
   home = ["HTML", "RSS", "JSON"]
@@ -258,9 +262,9 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
       # 是否使用目录
       enable = true
       # LoveIt 新增 | 0.2.9 是否保持使用文章前面的静态目录
-      keepStatic = true
+      keepStatic = false
       # 是否使侧边目录自动折叠展开
-      auto = true
+      auto = false
     # LoveIt 新增 | 0.2.0 代码配置
     [params.page.code]
       # 是否显示代码块的复制按钮

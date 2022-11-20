@@ -4,7 +4,15 @@
         <link>https://raja-blog.netlify.app/tags/</link>
         <description>Tags - Tag - raja-blog</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>1647193241@qq.com (raja)</managingEditor>
-            <webMaster>1647193241@qq.com (raja)</webMaster><lastBuildDate>Sun, 20 Nov 2022 17:30:23 &#43;0800</lastBuildDate><atom:link href="https://raja-blog.netlify.app/tags/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>1647193241@qq.com (raja)</webMaster><lastBuildDate>Sun, 20 Nov 2022 18:10:02 &#43;0800</lastBuildDate><atom:link href="https://raja-blog.netlify.app/tags/" rel="self" type="application/rss+xml" /><item>
+    <title>go</title>
+    <link>https://raja-blog.netlify.app/tags/go/</link>
+    <pubDate>Sun, 20 Nov 2022 18:10:02 &#43;0800</pubDate>
+    <author>raja</author>
+    <guid>https://raja-blog.netlify.app/tags/go/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
     <title>post</title>
     <link>https://raja-blog.netlify.app/tags/post/</link>
     <pubDate>Sun, 20 Nov 2022 17:30:23 &#43;0800</pubDate>
