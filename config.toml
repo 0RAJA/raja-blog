@@ -405,11 +405,11 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
         categoryId = "DIC_kwDOIdtRfc4CSqao"
         # 为空时自动适配当前主题 i18n 配置
         lang = "zh-CN"
-        mapping = "pathname"
+        mapping = "title"
         reactionsEnabled = "1"
         emitMetadata = "0"
         inputPosition = "top"
-        lazyLoading = false
+        lazyLoading = true
         lightTheme = "light"
         darkTheme = "dark_dimmed"
     # LoveIt 新增 | 0.2.7 第三方库配置
