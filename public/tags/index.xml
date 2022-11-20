@@ -1,8 +1,8 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Tags - Tag - raja的blog</title>
-        <link>http://example.org/tags/</link>
-        <description>Tags - Tag - raja的blog</description>
+        <title>Tags - Tag - raja-blog</title>
+        <link>https://raja-blog.netlify.app/tags/</link>
+        <description>Tags - Tag - raja-blog</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>1647193241@qq.com (raja)</managingEditor>
-            <webMaster>1647193241@qq.com (raja)</webMaster><atom:link href="http://example.org/tags/" rel="self" type="application/rss+xml" /></channel>
+            <webMaster>1647193241@qq.com (raja)</webMaster><atom:link href="https://raja-blog.netlify.app/tags/" rel="self" type="application/rss+xml" /></channel>
 </rss>

@@ -1,17 +1,17 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>raja的blog</title>
-        <link>http://example.org/</link>
+        <title>raja-blog</title>
+        <link>https://raja-blog.netlify.app/</link>
         <description>记录raja的美好生活</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>1647193241@qq.com (raja)</managingEditor>
             <webMaster>1647193241@qq.com (raja)</webMaster><lastBuildDate>Sat, 19 Nov 2022 23:07:32 &#43;0800</lastBuildDate>
-            <atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
+            <atom:link href="https://raja-blog.netlify.app/index.xml" rel="self" type="application/rss+xml" />
         <item>
     <title>First_post</title>
-    <link>http://example.org/posts/first_post/</link>
+    <link>https://raja-blog.netlify.app/posts/first_post/</link>
     <pubDate>Sat, 19 Nov 2022 23:07:32 &#43;0800</pubDate>
     <author>raja</author>
-    <guid>http://example.org/posts/first_post/</guid>
+    <guid>https://raja-blog.netlify.app/posts/first_post/</guid>
     <description><![CDATA[this is first post]]></description>
 </item>
 </channel>

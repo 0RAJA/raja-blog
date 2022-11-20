@@ -4,7 +4,7 @@ baseURL = "https://raja-blog.netlify.app/"
 theme = "LoveIt"
 
 # 网站标题
-title = "raja的blog"
+title = "raja-blog"
 
 # 网站语言, 仅在这里 CN 大写 ["en", "zh-CN", "fr", "pl", ...]
 languageCode = "zh-CN"
@@ -12,6 +12,8 @@ languageCode = "zh-CN"
 languageName = "简体中文"
 # 是否包括中日韩文字
 hasCJKLanguage = true
+# 自定义摘要长度
+summaryLength = 50
 
 # 默认每页列表显示的文章数目
 paginate = 12
@@ -95,7 +97,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
   # LoveIt 新增 | 0.2.0 日期格式
   dateFormat = "2006-01-02"
   # 网站标题, 用于 Open Graph 和 Twitter Cards
-  title = "raja的blog"
+  title = "raja-blog"
   # 网站描述, 用于 RSS, SEO, Open Graph 和 Twitter Cards
   description = "记录raja的美好生活"
   # 网站图片, 用于 Open Graph 和 Twitter Cards
@@ -112,13 +114,13 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
       # LOGO 的 URL
       logo = "/images/avatar.png"
       # 标题名称
-      name = "raja-blog"
+      name = "raja"
       # 你可以在名称 (允许 HTML 格式) 之前添加其他信息, 例如图标
       pre = ""
       # 你可以在名称 (允许 HTML 格式) 之后添加其他信息, 例如图标
       post = ""
       # LoveIt 新增 | 0.2.5 是否为标题显示打字机动画
-      typeit = true
+      typeit = false
 
   # 页面底部信息配置
   [params.footer]
@@ -159,7 +161,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
   # LoveIt 新增 | 0.2.0 应用图标配置
   [params.app]
     # 当添加到 iOS 主屏幕或者 Android 启动器时的标题, 覆盖默认标题
-    title = "raja的blog"
+    title = "raja-blog"
     # 是否隐藏网站图标资源链接
     noFavicon = false
     # 更现代的 SVG 网站图标, 可替代旧的 .png 和 .ico 文件
@@ -205,7 +207,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
       # 主页显示头像的 URL
       avatarURL = "/images/avatar.png"
       # LoveIt 更改 | 0.2.7 主页显示的网站标题 (支持 HTML 格式)
-      title = "raja-blog"
+      title = "raja的博客"
       # 主页显示的网站副标题 (允许 HTML 格式)
       subtitle = "喧闹任其喧闹，自由我自为之，我自风情万种，与世无争。​"
       # 是否为副标题显示打字机动画
@@ -456,3 +458,4 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
   # LoveIt 新增 | 0.2.0 网站分析配置
   [params.analytics]
     enable = false
+
