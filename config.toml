@@ -231,9 +231,9 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
 
   # 作者的社交信息设置
   [params.social]
-    GitHub = "https://github.com/0RAJA"
-    Steam = "https://steamcommunity.com/profiles/76561199113491429/"
-    Bilibili = "https://space.bilibili.com/406573462"
+    GitHub = "0RAJA"
+    Steam = "76561199113491429"
+    Bilibili = "406573462"
     Email = "1647193241@qq.com"
     RSS = true # LoveIt 新增 | 0.2.0
 
