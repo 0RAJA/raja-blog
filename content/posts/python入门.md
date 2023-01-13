@@ -6,6 +6,7 @@ date: 2023-01-13T23:08:33+08:00 # 时间
 lastmod: 2023-01-13T23:08:33+08:00 # 上次修改时间
 tags: ["python","总结"] # 标签
 categories: ["python"] # 分类
+featuredImage: "https://raw.githubusercontent.com/0RAJA/img/main/20230113231053-230-image-20230113231052492.png"
 featuredImagePreview: "https://raw.githubusercontent.com/0RAJA/img/main/20230113231053-230-image-20230113231052492.png" # 封面链接
 draft: false # 是否为草稿
 hiddenFromHomePage: false # 私人

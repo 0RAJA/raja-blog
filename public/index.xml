@@ -1,34 +1,40 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>raja-blog</title>
-        <link>https://raja-blog.netlify.app/</link>
-        <description>记录raja的美好生活</description>
+        <title>Raja&#39;s Blog</title>
+        <link>https://blog.humraja.top/</link>
+        <description>记录Raja的美好生活</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>1647193241@qq.com (raja)</managingEditor>
-            <webMaster>1647193241@qq.com (raja)</webMaster><lastBuildDate>Fri, 13 Jan 2023 23:08:33 &#43;0800</lastBuildDate>
-            <atom:link href="https://raja-blog.netlify.app/index.xml" rel="self" type="application/rss+xml" />
+            <webMaster>1647193241@qq.com (raja)</webMaster><lastBuildDate>Sat, 14 Jan 2023 00:25:43 &#43;0800</lastBuildDate>
+            <atom:link href="https://blog.humraja.top/index.xml" rel="self" type="application/rss+xml" />
         <item>
     <title>Python入门</title>
-    <link>https://raja-blog.netlify.app/posts/python%E5%85%A5%E9%97%A8/</link>
+    <link>https://blog.humraja.top/posts/python%E5%85%A5%E9%97%A8/</link>
     <pubDate>Fri, 13 Jan 2023 23:08:33 &#43;0800</pubDate>
     <author>raja</author>
-    <guid>https://raja-blog.netlify.app/posts/python%E5%85%A5%E9%97%A8/</guid>
-    <description><![CDATA[学习python的总结"]]></description>
+    <guid>https://blog.humraja.top/posts/python%E5%85%A5%E9%97%A8/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="https://raw.githubusercontent.com/0RAJA/img/main/20230113231053-230-image-20230113231052492.png" referrerpolicy="no-referrer">
+            </div>学习python的总结"]]></description>
 </item>
 <item>
     <title>Go深入学习</title>
-    <link>https://raja-blog.netlify.app/posts/go%E6%B7%B1%E5%85%A5%E5%AD%A6%E4%B9%A0/</link>
+    <link>https://blog.humraja.top/posts/go%E6%B7%B1%E5%85%A5%E5%AD%A6%E4%B9%A0/</link>
     <pubDate>Sun, 20 Nov 2022 18:10:02 &#43;0800</pubDate>
     <author>raja</author>
-    <guid>https://raja-blog.netlify.app/posts/go%E6%B7%B1%E5%85%A5%E5%AD%A6%E4%B9%A0/</guid>
-    <description><![CDATA[深入学习go的相关知识]]></description>
+    <guid>https://blog.humraja.top/posts/go%E6%B7%B1%E5%85%A5%E5%AD%A6%E4%B9%A0/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="https://go.dev/images/go_core_data_case_study.png" referrerpolicy="no-referrer">
+            </div>深入学习go的相关知识]]></description>
 </item>
 <item>
-    <title></title>
-    <link>https://raja-blog.netlify.app/posts/first_post/</link>
-    <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate>
+    <title>First_post</title>
+    <link>https://blog.humraja.top/posts/first_post/</link>
+    <pubDate>Sat, 19 Nov 2022 23:07:32 &#43;0800</pubDate>
     <author>raja</author>
-    <guid>https://raja-blog.netlify.app/posts/first_post/</guid>
-    <description><![CDATA[title: &ldquo;First_post&rdquo; date: 2022-11-19T23:07:32+08:00 this is first post]]></description>
+    <guid>https://blog.humraja.top/posts/first_post/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="https://th.wallhaven.cc/small/zy/zyxvqy.jpg" referrerpolicy="no-referrer">
+            </div>this is first post]]></description>
 </item>
 </channel>
 </rss>

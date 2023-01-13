@@ -6,6 +6,7 @@ date: 2022-11-20T18:10:02+08:00 # 时间
 lastmod: 2022-11-20T18:10:02+08:00 # 上次修改时间
 tags: ["go","总结"] # 标签
 categories: ["go"] # 分类
+featuredImage: "https://go.dev/images/go_core_data_case_study.png"
 featuredImagePreview: "https://go.dev/images/go_core_data_case_study.png" # 封面链接
 draft: false # 是否为草稿
 hiddenFromHomePage: false # 私人

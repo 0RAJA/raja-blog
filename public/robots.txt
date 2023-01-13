@@ -61,4 +61,4 @@ Disallow: /
 User-agent: ZoominfoBot
 Disallow: /
 
-Sitemap: https://raja-blog.netlify.app/sitemap.xml
+Sitemap: https://blog.humraja.top/sitemap.xml
