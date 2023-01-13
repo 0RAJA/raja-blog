@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Python入门 - raja-blog</title><meta name="Description" content="学习python的总结&#34;"><meta property="og:title" content="Python入门" />
+<meta property="og:description" content="学习python的总结&#34;" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://raja-blog.netlify.app/posts/python%E5%85%A5%E9%97%A8/" /><meta property="og:image" content="https://raja-blog.netlify.app/images/avatar.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-01-13T23:08:33+08:00" />
+<meta property="article:modified_time" content="2023-01-13T23:08:33+08:00" /><meta property="og:site_name" content="raja-blog" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://raja-blog.netlify.app/images/avatar.png"/>
+
+<meta name="twitter:title" content="Python入门"/>
+<meta name="twitter:description" content="学习python的总结&#34;"/>
+<meta name="application-name" content="raja-blog">
+<meta name="apple-mobile-web-app-title" content="raja-blog"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://raja-blog.netlify.app/posts/python%E5%85%A5%E9%97%A8/" /><link rel="prev" href="https://raja-blog.netlify.app/posts/go%E6%B7%B1%E5%85%A5%E5%AD%A6%E4%B9%A0/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Python入门",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/raja-blog.netlify.app\/posts\/python%E5%85%A5%E9%97%A8\/"
+        },"image": ["https:\/\/raja-blog.netlify.app\/apple-touch-icon.png"],"genre": "posts","keywords": "python, 总结","wordcount":  2430 ,
+        "url": "https:\/\/raja-blog.netlify.app\/posts\/python%E5%85%A5%E9%97%A8\/","datePublished": "2023-01-13T23:08:33+08:00","dateModified": "2023-01-13T23:08:33+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "raja"
+            },"description": "学习python的总结\""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="raja-blog"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="/images/avatar.png"
+        data-srcset="/images/avatar.png, /images/avatar.png 1.5x, /images/avatar.png 2x"
+        data-sizes="auto"
+        alt="/images/avatar.png"
+        title="/images/avatar.png" />raja</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/abort/"> 关于 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="raja-blog"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="/images/avatar.png"
+        data-srcset="/images/avatar.png, /images/avatar.png 1.5x, /images/avatar.png 2x"
+        data-sizes="auto"
+        alt="/images/avatar.png"
+        title="/images/avatar.png" />raja</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/abort/" title="">关于</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Python入门</h1><h2 class="single-subtitle">Python入门</h2><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://github.com/0RAJA" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>raja</a></span>&nbsp;<span class="post-category">included in <a href="/categories/python/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>python</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-01-13">2023-01-13</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;2430 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;5 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#python">python</a>
+      <ul>
+        <li><a href="#数据类型与控制流">数据类型与控制流</a>
+          <ul>
+            <li><a href="#字符串-格式化">字符串-格式化</a></li>
+            <li><a href="#list">list</a></li>
+            <li><a href="#tuple">Tuple</a></li>
+            <li><a href="#dict">dict</a></li>
+            <li><a href="#set">set</a></li>
+          </ul>
+        </li>
+        <li><a href="#文件">文件</a></li>
+        <li><a href="#json">json</a></li>
+        <li><a href="#函数">函数</a></li>
+        <li><a href="#函数式编程">函数式编程</a></li>
+        <li><a href="#内置模块">内置模块</a></li>
+        <li><a href="#包管理">包管理</a></li>
+        <li><a href="#面向对象">面向对象</a>
+          <ul>
+            <li><a href="#封装">封装</a></li>
+            <li><a href="#继承">继承</a></li>
+            <li><a href="#多态">多态</a></li>
+            <li><a href="#类的私有属性和方法">类的私有属性和方法</a></li>
+            <li><a href="#类的静态方法和类方法">类的静态方法和类方法</a></li>
+            <li><a href="#类的内置属性和方法">类的内置属性和方法</a></li>
+          </ul>
+        </li>
+        <li><a href="#装饰器和异常处理">装饰器和异常处理</a>
+          <ul>
+            <li><a href="#装饰器函数">装饰器函数</a>
+              <ul>
+                <li><a href="#函数参数传递">函数参数传递</a></li>
+                <li><a href="#装饰器函数-1">装饰器函数</a></li>
+              </ul>
+            </li>
+            <li><a href="#装饰器类">装饰器类</a></li>
+            <li><a href="#异常处理">异常处理</a></li>
+          </ul>
+        </li>
+        <li><a href="#python的实用工具">python的实用工具</a>
+          <ul>
+            <li><a href="#pep8规范">pep8规范</a></li>
+            <li><a href="#requests">requests</a></li>
+            <li><a href="#xlrdxlwt">xlrd,xlwt</a></li>
+            <li><a href="#zipfile">zipfile</a></li>
+            <li><a href="#shutil">shutil</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h1 id="python">python</h1>
+<h2 id="数据类型与控制流">数据类型与控制流</h2>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://raw.githubusercontent.com/0RAJA/img/main/20230113225222-282-image-20230113225221455.png"
+        data-srcset="https://raw.githubusercontent.com/0RAJA/img/main/20230113225222-282-image-20230113225221455.png, https://raw.githubusercontent.com/0RAJA/img/main/20230113225222-282-image-20230113225221455.png 1.5x, https://raw.githubusercontent.com/0RAJA/img/main/20230113225222-282-image-20230113225221455.png 2x"
+        data-sizes="auto"
+        alt="https://raw.githubusercontent.com/0RAJA/img/main/20230113225222-282-image-20230113225221455.png"
+        title="image-20230113225221455" /></p>
+<p>注意:不可变数据类型在修改时会创建一个新对象</p>
+<p>特点:</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://raw.githubusercontent.com/0RAJA/img/main/20230113225836-725-image-20230113225835807.png"
+        data-srcset="https://raw.githubusercontent.com/0RAJA/img/main/20230113225836-725-image-20230113225835807.png, https://raw.githubusercontent.com/0RAJA/img/main/20230113225836-725-image-20230113225835807.png 1.5x, https://raw.githubusercontent.com/0RAJA/img/main/20230113225836-725-image-20230113225835807.png 2x"
+        data-sizes="auto"
+        alt="https://raw.githubusercontent.com/0RAJA/img/main/20230113225836-725-image-20230113225835807.png"
+        title="image-20230113225835807" /></p>
+<h3 id="字符串-格式化">字符串-格式化</h3>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://raw.githubusercontent.com/0RAJA/img/main/20230113230231-009-image-20230113230230290.png"
+        data-srcset="https://raw.githubusercontent.com/0RAJA/img/main/20230113230231-009-image-20230113230230290.png, https://raw.githubusercontent.com/0RAJA/img/main/20230113230231-009-image-20230113230230290.png 1.5x, https://raw.githubusercontent.com/0RAJA/img/main/20230113230231-009-image-20230113230230290.png 2x"
+        data-sizes="auto"
+        alt="https://raw.githubusercontent.com/0RAJA/img/main/20230113230231-009-image-20230113230230290.png"
+        title="image-20230113230230290" /></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;</span><span class="si">%s</span><span class="s2">,</span><span class="si">%s</span><span class="s2">,</span><span class="si">%s</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="p">(</span><span class="s1">&#39;t1&#39;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">))</span> <span class="c1"># 格式化</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># print(f&#39;myname:{name}&#39;) # py2不支持</span>
+</span></span></code></pre></div><h3 id="list">list</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># list</span>
+</span></span><span class="line"><span class="cl"><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;raja&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">,</span> <span class="s1">&#39;4&#39;</span><span class="p">]))</span> <span class="c1"># 拼接</span>
+</span></span><span class="line"><span class="cl"><span class="n">f1</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">f2</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">f1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">f1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;4&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">f3</span> <span class="o">=</span> <span class="p">[</span><span class="nb">list</span><span class="p">(</span><span class="n">f1</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">f3</span><span class="p">)</span>
+</span></span></code></pre></div><h3 id="tuple">Tuple</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># tuple: 是否可变需要看内部成员对象</span>
+</span></span><span class="line"><span class="cl"><span class="n">sql</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">[])</span>
+</span></span><span class="line"><span class="cl"><span class="n">sql</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">sql</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 结合一下</span>
+</span></span><span class="line"><span class="cl"><span class="n">a_string</span> <span class="o">=</span> <span class="s1">&#39;abc汉字&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">a_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">a_string</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">a_tuple</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">a_list</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">a_string2</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">a_tuple</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">a_string</span><span class="p">,</span> <span class="n">a_list</span><span class="p">,</span> <span class="n">a_tuple</span><span class="p">,</span> <span class="n">a_string2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">a_string</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">char</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">ele</span> <span class="ow">in</span> <span class="n">a_list</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">ele</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;none&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">char</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">a_string</span><span class="p">):</span>  <span class="c1"># idx,elem</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="n">char</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">s</span> <span class="o">=</span> <span class="s2">&#34;asdasd sadasda asdasdadas&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 转码：</span>
+</span></span><span class="line"><span class="cl"><span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">for ch in s:
+</span></span></span><span class="line"><span class="cl"><span class="s2">    if &#39;a&#39; &lt;= ch &lt;= &#39;z&#39;:
+</span></span></span><span class="line"><span class="cl"><span class="s2">        ch = chr((ord(ch) - ord(&#39;a&#39;) + 2) % 26 + ord(&#39;a&#39;))
+</span></span></span><span class="line"><span class="cl"><span class="s2">    print(ch, end=&#39;&#39;)
+</span></span></span><span class="line"><span class="cl"><span class="s2">&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;&#34;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="nb">chr</span><span class="p">((</span><span class="nb">ord</span><span class="p">(</span><span class="n">ch</span><span class="p">)</span> <span class="o">-</span> <span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span> <span class="o">%</span> <span class="mi">26</span> <span class="o">+</span> <span class="nb">ord</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">))</span> <span class="k">if</span> <span class="s1">&#39;a&#39;</span> <span class="o">&lt;=</span> <span class="n">ch</span> <span class="o">&lt;=</span> <span class="s1">&#39;z&#39;</span> <span class="k">else</span> <span class="n">ch</span> <span class="k">for</span> <span class="n">ch</span> <span class="ow">in</span> <span class="n">s</span><span class="p">]))</span>
+</span></span></code></pre></div><h3 id="dict">dict</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># dict</span>
+</span></span><span class="line"><span class="cl"><span class="n">a_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="s1">&#39;b&#39;</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">a_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span> <span class="n">a_dict</span><span class="o">.</span><span class="n">values</span><span class="p">(),</span> <span class="n">a_dict</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">a_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">a_dict</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>  <span class="c1"># key必须存在</span>
+</span></span><span class="line"><span class="cl"><span class="n">a_dict</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+</span></span></code></pre></div><h3 id="set">set</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># set</span>
+</span></span><span class="line"><span class="cl"><span class="n">a_set</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span> <span class="c1"># 空set 不能用{}:表示字典</span>
+</span></span><span class="line"><span class="cl"><span class="n">b_set</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">a_set</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">Random</span><span class="p">()</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">20</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="n">b_set</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">Random</span><span class="p">()</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">30</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">a_set</span> <span class="o">&amp;</span> <span class="n">b_set</span><span class="p">,</span> <span class="n">a_set</span> <span class="o">|</span> <span class="n">b_set</span><span class="p">,</span> <span class="n">a_set</span> <span class="o">-</span> <span class="n">b_set</span><span class="p">,</span> <span class="n">a_set</span> <span class="o">^</span> <span class="n">b_set</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">a_set</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s2">&#34;set&#34;</span><span class="p">})</span>  <span class="c1"># 更新一个字符串到集合</span>
+</span></span><span class="line"><span class="cl"><span class="n">a_set</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="s2">&#34;set&#34;</span><span class="p">)</span>  <span class="c1"># 将字符串拆分为字符再进行添加</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">a_set</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 去重</span>
+</span></span><span class="line"><span class="cl"><span class="n">b_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">b_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">b_list</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">b_list</span><span class="p">)</span>
+</span></span></code></pre></div><blockquote>
+<p>注意:</p>
+<p>对于是字典和字符转换的集合是随机删除元素，当集合是由列表和元组组成时，set.pop()是从最左边删除</p>
+</blockquote>
+<h2 id="文件">文件</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 文件</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># with open(&#39;test.txy&#39;) as f:</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#     for line in f:</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#         print(line)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 读取csv文件</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">csv</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">rows</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">&#39;jack&#39;</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="s1">&#39;Male&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;boss&#39;</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="s1">&#39;Female&#39;</span><span class="p">]]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;data.csv&#39;</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;a&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">out_csv</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">file_writer</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">out_csv</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">file_writer</span><span class="o">.</span><span class="n">writerows</span><span class="p">(</span><span class="n">rows</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;data.csv&#39;</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">in_csv</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">file_reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">in_csv</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">header</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">file_reader</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">file_reader</span><span class="o">.</span><span class="n">line_num</span><span class="p">,</span> <span class="n">header</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">file_reader</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># csv 文件处理</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># with open(&#39;marks.csv&#39;, newline=&#39;&#39;, mode=&#39;r&#39;) as in_csv:</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#     file_reader = csv.DictReader(in_csv)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#     header = file_reader.fieldnames</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#     header.append(&#39;total&#39;)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#     with open(&#39;marks_new.csv&#39;, newline=&#39;&#39;, mode=&#39;r&#39;) as out_csv:</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#         file_writer = csv.DictWriter(out_csv, header)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#         for row in file_reader:</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#             total = (eval(row[&#39;math&#39;]) + eval(row[&#39;english&#39;]))</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#             row[&#39;total&#39;] = int(total)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#             file_writer.writerow(row)</span>
+</span></span></code></pre></div><h2 id="json">json</h2>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://raw.githubusercontent.com/0RAJA/img/main/image-20230110225442699.png"
+        data-srcset="https://raw.githubusercontent.com/0RAJA/img/main/image-20230110225442699.png, https://raw.githubusercontent.com/0RAJA/img/main/image-20230110225442699.png 1.5x, https://raw.githubusercontent.com/0RAJA/img/main/image-20230110225442699.png 2x"
+        data-sizes="auto"
+        alt="https://raw.githubusercontent.com/0RAJA/img/main/image-20230110225442699.png"
+        title="image-20230110225442699" /></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">json</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">test_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Tom&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> <span class="s1">&#39;hobby&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;swimming&#39;</span><span class="p">,</span> <span class="s1">&#39;reading&#39;</span><span class="p">,</span> <span class="s1">&#39;jogging&#39;</span><span class="p">],</span> <span class="s1">&#39;married&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="n">json_str</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">test_dict</span><span class="p">)</span>  <span class="c1"># 串行花</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">json_str</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">json_str</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">json_dict_new</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">json_str</span><span class="p">)</span>  <span class="c1"># 解码</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">json_dict_new</span> <span class="o">==</span> <span class="n">test_dict</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;data.json&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">jf</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">test_dict</span><span class="p">,</span> <span class="n">fp</span><span class="o">=</span><span class="n">jf</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>  <span class="c1"># map转json文件（带格式）</span>
+</span></span><span class="line"><span class="cl"><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;data.json&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">jf</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">new_dict</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">jf</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">new_dict</span><span class="p">),</span> <span class="n">new_dict</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 自定义类的串行化</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">encode_user</span><span class="p">(</span><span class="n">o</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">o</span><span class="p">,</span> <span class="n">User</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="n">o</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="n">o</span><span class="o">.</span><span class="n">age</span><span class="p">,</span> <span class="n">o</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="p">:</span> <span class="kc">True</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s1">&#39;error&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">User</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">user</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="s1">&#39;raja&#39;</span><span class="p">,</span> <span class="mi">21</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">json_user</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">user</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="n">encode_user</span><span class="p">)</span>  <span class="c1"># 先转为map,再转为json</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">json_user</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 自定义类的反串行化</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">decode_user</span><span class="p">(</span><span class="n">o</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">o</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">User</span><span class="o">.</span><span class="vm">__name__</span> <span class="ow">in</span> <span class="n">o</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="n">User</span><span class="p">(</span><span class="n">o</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">],</span> <span class="n">o</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">    <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s1">&#39;error&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">json_user</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">json_user</span><span class="p">,</span> <span class="n">object_hook</span><span class="o">=</span><span class="n">decode_user</span><span class="p">)))</span>
+</span></span></code></pre></div><h2 id="函数">函数</h2>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://raw.githubusercontent.com/0RAJA/img/main/image-20230110234244336.png"
+        data-srcset="https://raw.githubusercontent.com/0RAJA/img/main/image-20230110234244336.png, https://raw.githubusercontent.com/0RAJA/img/main/image-20230110234244336.png 1.5x, https://raw.githubusercontent.com/0RAJA/img/main/image-20230110234244336.png 2x"
+        data-sizes="auto"
+        alt="https://raw.githubusercontent.com/0RAJA/img/main/image-20230110234244336.png"
+        title="image-20230110234244336" /></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 函数</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>  <span class="c1"># 变量，可变参，map</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">))</span>  <span class="c1"># 对字典做拆分</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)))</span>  <span class="c1"># 起点，终点，步长</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">func</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">year</span><span class="o">=</span><span class="mi">2002</span><span class="p">,</span> <span class="n">month</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">day</span><span class="o">=</span><span class="mi">26</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">func2</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="o">*</span><span class="n">param</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">param</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">param</span><span class="p">)):</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="s2">&#34;:&#34;</span><span class="p">,</span> <span class="n">param</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">params</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="s2">&#34;:&#34;</span><span class="p">,</span> <span class="n">params</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">func2</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</span></span></code></pre></div><h2 id="函数式编程">函数式编程</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">reduce</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">filter_result</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="n">a</span><span class="p">))</span>  <span class="c1"># 过滤器</span>
+</span></span><span class="line"><span class="cl"><span class="n">map_result</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">**</span> <span class="n">x</span><span class="p">,</span> <span class="n">a</span><span class="p">))</span>  <span class="c1"># 对每个值进行操作</span>
+</span></span><span class="line"><span class="cl"><span class="n">reduce_result</span> <span class="o">=</span> <span class="n">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1"># 累加函数，输入列表，初始值</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">filter_result</span><span class="p">,</span> <span class="n">map_result</span><span class="p">,</span> <span class="n">reduce_result</span><span class="p">)</span>
+</span></span></code></pre></div><h2 id="内置模块">内置模块</h2>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://raw.githubusercontent.com/0RAJA/img/main/image-20230111204835525.png"
+        data-srcset="https://raw.githubusercontent.com/0RAJA/img/main/image-20230111204835525.png, https://raw.githubusercontent.com/0RAJA/img/main/image-20230111204835525.png 1.5x, https://raw.githubusercontent.com/0RAJA/img/main/image-20230111204835525.png 2x"
+        data-sizes="auto"
+        alt="https://raw.githubusercontent.com/0RAJA/img/main/image-20230111204835525.png"
+        title="image-20230111204835525" /></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://raw.githubusercontent.com/0RAJA/img/main/image-20230111205004344.png"
+        data-srcset="https://raw.githubusercontent.com/0RAJA/img/main/image-20230111205004344.png, https://raw.githubusercontent.com/0RAJA/img/main/image-20230111205004344.png 1.5x, https://raw.githubusercontent.com/0RAJA/img/main/image-20230111205004344.png 2x"
+        data-sizes="auto"
+        alt="https://raw.githubusercontent.com/0RAJA/img/main/image-20230111205004344.png"
+        title="image-20230111205004344" /></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://raw.githubusercontent.com/0RAJA/img/main/image-20230111205522216.png"
+        data-srcset="https://raw.githubusercontent.com/0RAJA/img/main/image-20230111205522216.png, https://raw.githubusercontent.com/0RAJA/img/main/image-20230111205522216.png 1.5x, https://raw.githubusercontent.com/0RAJA/img/main/image-20230111205522216.png 2x"
+        data-sizes="auto"
+        alt="https://raw.githubusercontent.com/0RAJA/img/main/image-20230111205522216.png"
+        title="image-20230111205522216" /></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://raw.githubusercontent.com/0RAJA/img/main/image-20230111205623548.png"
+        data-srcset="https://raw.githubusercontent.com/0RAJA/img/main/image-20230111205623548.png, https://raw.githubusercontent.com/0RAJA/img/main/image-20230111205623548.png 1.5x, https://raw.githubusercontent.com/0RAJA/img/main/image-20230111205623548.png 2x"
+        data-sizes="auto"
+        alt="https://raw.githubusercontent.com/0RAJA/img/main/image-20230111205623548.png"
+        title="image-20230111205623548" /></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://raw.githubusercontent.com/0RAJA/img/main/image-20230111205739845.png"
+        data-srcset="https://raw.githubusercontent.com/0RAJA/img/main/image-20230111205739845.png, https://raw.githubusercontent.com/0RAJA/img/main/image-20230111205739845.png 1.5x, https://raw.githubusercontent.com/0RAJA/img/main/image-20230111205739845.png 2x"
+        data-sizes="auto"
+        alt="https://raw.githubusercontent.com/0RAJA/img/main/image-20230111205739845.png"
+        title="image-20230111205739845" /></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://raw.githubusercontent.com/0RAJA/img/main/image-20230111210017186.png"
+        data-srcset="https://raw.githubusercontent.com/0RAJA/img/main/image-20230111210017186.png, https://raw.githubusercontent.com/0RAJA/img/main/image-20230111210017186.png 1.5x, https://raw.githubusercontent.com/0RAJA/img/main/image-20230111210017186.png 2x"
+        data-sizes="auto"
+        alt="https://raw.githubusercontent.com/0RAJA/img/main/image-20230111210017186.png"
+        title="image-20230111210017186" /></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://raw.githubusercontent.com/0RAJA/img/main/image-20230111214742003.png"
+        data-srcset="https://raw.githubusercontent.com/0RAJA/img/main/image-20230111214742003.png, https://raw.githubusercontent.com/0RAJA/img/main/image-20230111214742003.png 1.5x, https://raw.githubusercontent.com/0RAJA/img/main/image-20230111214742003.png 2x"
+        data-sizes="auto"
+        alt="https://raw.githubusercontent.com/0RAJA/img/main/image-20230111214742003.png"
+        title="image-20230111214742003" /></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="o">*</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 命名tuple</span>
+</span></span><span class="line"><span class="cl"><span class="n">User</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s1">&#39;User&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">,</span> <span class="s1">&#39;sex&#39;</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="n">u</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="s1">&#39;Tom&#39;</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="s1">&#39;Male&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">u</span><span class="o">.</span><span class="n">age</span><span class="p">,</span> <span class="n">u</span><span class="o">.</span><span class="n">sex</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 双端队列</span>
+</span></span><span class="line"><span class="cl"><span class="n">q</span> <span class="o">=</span> <span class="n">deque</span><span class="p">([</span><span class="s1">&#39;u&#39;</span><span class="p">,</span> <span class="s1">&#39;v&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="n">q</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;z&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">q</span><span class="o">.</span><span class="n">appendleft</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">q</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s1">&#39;u&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">q</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 计数：dict的子类用于计数可hash对象，以map的k-v对形式存储u,当访问的key不存在时返回0,否则返回计数</span>
+</span></span><span class="line"><span class="cl"><span class="n">cnt</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="s1">&#39;abcdabdssad&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">cnt</span><span class="p">,</span> <span class="n">cnt</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">],</span> <span class="n">cnt</span><span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">],</span> <span class="n">cnt</span><span class="p">[</span><span class="s1">&#39;z&#39;</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 有序字典：dict的子类，按照插入的顺序排列</span>
+</span></span><span class="line"><span class="cl"><span class="n">od</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">([(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)])</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">od</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 默认值字典：不存在的key返回默认值</span>
+</span></span><span class="line"><span class="cl"><span class="n">dd</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="k">lambda</span><span class="p">:</span> <span class="s1">&#39;N/A&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">dd</span><span class="p">[</span><span class="s1">&#39;k1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">dd</span><span class="p">[</span><span class="s1">&#39;k1&#39;</span><span class="p">],</span> <span class="n">dd</span><span class="p">[</span><span class="s1">&#39;k2&#39;</span><span class="p">],</span> <span class="n">dd</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;k2&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
+</span></span></code></pre></div><p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://raw.githubusercontent.com/0RAJA/img/main/image-20230111221152363.png"
+        data-srcset="https://raw.githubusercontent.com/0RAJA/img/main/image-20230111221152363.png, https://raw.githubusercontent.com/0RAJA/img/main/image-20230111221152363.png 1.5x, https://raw.githubusercontent.com/0RAJA/img/main/image-20230111221152363.png 2x"
+        data-sizes="auto"
+        alt="https://raw.githubusercontent.com/0RAJA/img/main/image-20230111221152363.png"
+        title="image-20230111221152363" /></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 迭代器</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">itertools</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 无限迭代器</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">itertools</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>  <span class="c1"># 从当前数字无限循环下去</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">itertools</span><span class="o">.</span><span class="n">cycle</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]):</span>  <span class="c1"># 无限滚动循环传入的序列</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">itertools</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">):</span>  <span class="c1"># 可以循环指定元素（可以指定个数）</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</span></span></code></pre></div><p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://raw.githubusercontent.com/0RAJA/img/main/image-20230111221931858.png"
+        data-srcset="https://raw.githubusercontent.com/0RAJA/img/main/image-20230111221931858.png, https://raw.githubusercontent.com/0RAJA/img/main/image-20230111221931858.png 1.5x, https://raw.githubusercontent.com/0RAJA/img/main/image-20230111221931858.png 2x"
+        data-sizes="auto"
+        alt="https://raw.githubusercontent.com/0RAJA/img/main/image-20230111221931858.png"
+        title="image-20230111221931858" /></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 有限迭代器</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 将一组迭代对象串联为一个大的迭代器</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">itertools</span><span class="o">.</span><span class="n">chain</span><span class="p">(</span><span class="s1">&#39;abcde&#39;</span><span class="p">,</span> <span class="s1">&#39;de&#39;</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 相邻的元素根据age进行分组</span>
+</span></span><span class="line"><span class="cl"><span class="n">persons</span> <span class="o">=</span> <span class="p">[{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Tom&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Bob&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">19</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Alice&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">},</span>
+</span></span><span class="line"><span class="cl">           <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Bess&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">}]</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">grp</span> <span class="ow">in</span> <span class="n">itertools</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">persons</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]):</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">grp</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 计算迭代器：默认累加求和</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">itertools</span><span class="o">.</span><span class="n">accumulate</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]):</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">itertools</span><span class="o">.</span><span class="n">accumulate</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="nb">max</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">()</span>
+</span></span></code></pre></div><p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://raw.githubusercontent.com/0RAJA/img/main/image-20230111225018210.png"
+        data-srcset="https://raw.githubusercontent.com/0RAJA/img/main/image-20230111225018210.png, https://raw.githubusercontent.com/0RAJA/img/main/image-20230111225018210.png 1.5x, https://raw.githubusercontent.com/0RAJA/img/main/image-20230111225018210.png 2x"
+        data-sizes="auto"
+        alt="https://raw.githubusercontent.com/0RAJA/img/main/image-20230111225018210.png"
+        title="image-20230111225018210" /></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://raw.githubusercontent.com/0RAJA/img/main/image-20230111225500333.png"
+        data-srcset="https://raw.githubusercontent.com/0RAJA/img/main/image-20230111225500333.png, https://raw.githubusercontent.com/0RAJA/img/main/image-20230111225500333.png 1.5x, https://raw.githubusercontent.com/0RAJA/img/main/image-20230111225500333.png 2x"
+        data-sizes="auto"
+        alt="https://raw.githubusercontent.com/0RAJA/img/main/image-20230111225500333.png"
+        title="image-20230111225500333" /></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 组合迭代器</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 可迭代的笛卡儿积</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">itertools</span><span class="o">.</span><span class="n">product</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]):</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 全排列 长度为2 无重复元素</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">itertools</span><span class="o">.</span><span class="n">permutations</span><span class="p">(</span><span class="s1">&#39;abc&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 组合 有序 无重复元素</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">itertools</span><span class="o">.</span><span class="n">combinations</span><span class="p">(</span><span class="s1">&#39;abc&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 长度为2的组合,有序，可重复</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">itertools</span><span class="o">.</span><span class="n">combinations_with_replacement</span><span class="p">(</span><span class="s1">&#39;abc&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">()</span>
+</span></span></code></pre></div><h2 id="包管理">包管理</h2>
+<ol>
+<li>
+<p>源码安装</p>
+<p>在源码包根路径下<code>python setup.py install</code></p>
+</li>
+<li>
+<p>包管理器自动安装</p>
+<p><code>pip install django==2.2.1</code></p>
+</li>
+</ol>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://raw.githubusercontent.com/0RAJA/img/main/image-20230111225908888.png"
+        data-srcset="https://raw.githubusercontent.com/0RAJA/img/main/image-20230111225908888.png, https://raw.githubusercontent.com/0RAJA/img/main/image-20230111225908888.png 1.5x, https://raw.githubusercontent.com/0RAJA/img/main/image-20230111225908888.png 2x"
+        data-sizes="auto"
+        alt="https://raw.githubusercontent.com/0RAJA/img/main/image-20230111225908888.png"
+        title="image-20230111225908888" /></p>
+<h2 id="面向对象">面向对象</h2>
+<h3 id="封装">封装</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 封装</span>
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Person</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;this is a people class esample&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">person_name</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>  <span class="c1"># 类属性 公共模板 赋值会单独拥有，修改内容会同时修改</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># 每个实例单独的</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">speak</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;name:&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">person_name</span><span class="p">,</span> <span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">p1</span> <span class="o">=</span> <span class="n">Person</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">p1</span><span class="o">.</span><span class="n">speak</span><span class="p">(</span><span class="s1">&#39;test&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">p2</span> <span class="o">=</span> <span class="n">Person</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="n">p1</span><span class="p">))</span>  <span class="c1"># 方法和属性</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">p1</span><span class="p">))</span>  <span class="c1"># 类信息</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">p1</span><span class="o">.</span><span class="n">person_name</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>  <span class="c1"># 修改内容会导致所有实例都被修改</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">p1</span><span class="o">.</span><span class="n">person_name</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">p2</span><span class="o">.</span><span class="n">person_name</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">p1</span><span class="o">.</span><span class="n">person_name</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>  <span class="c1"># 直接赋值只改变自身</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">p1</span><span class="o">.</span><span class="n">person_name</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">p2</span><span class="o">.</span><span class="n">person_name</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">p1</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">)</span>  <span class="c1"># 动态语言 动态增加删除类属性</span>
+</span></span><span class="line"><span class="cl"><span class="n">p1</span><span class="o">.</span><span class="n">test</span> <span class="o">=</span> <span class="s1">&#39;test&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="k">del</span> <span class="n">p1</span><span class="o">.</span><span class="n">name</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">p1</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">)</span>
+</span></span></code></pre></div><h3 id="继承">继承</h3>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://raw.githubusercontent.com/0RAJA/img/main/image-20230112170603860.png"
+        data-srcset="https://raw.githubusercontent.com/0RAJA/img/main/image-20230112170603860.png, https://raw.githubusercontent.com/0RAJA/img/main/image-20230112170603860.png 1.5x, https://raw.githubusercontent.com/0RAJA/img/main/image-20230112170603860.png 2x"
+        data-sizes="auto"
+        alt="https://raw.githubusercontent.com/0RAJA/img/main/image-20230112170603860.png"
+        title="image-20230112170603860" /></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 继承</span>
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Student</span><span class="p">(</span><span class="n">Person</span><span class="p">):</span>  <span class="c1"># 继承父类的属性和方法</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">food</span><span class="p">,</span> <span class="n">grade</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="mi">21</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">food</span> <span class="o">=</span> <span class="n">food</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">grade</span> <span class="o">=</span> <span class="n">grade</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">eat</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">food</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;eat:&#39;</span><span class="p">,</span> <span class="n">food</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">speak</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>  <span class="c1"># 方法重写</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">super</span><span class="p">(</span><span class="n">Student</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">speak</span><span class="p">()</span>  <span class="c1"># 调用父类的方法</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;name:&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">person_name</span><span class="p">,</span> <span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">s1</span> <span class="o">=</span> <span class="n">Student</span><span class="p">(</span><span class="s1">&#39;raja&#39;</span><span class="p">,</span> <span class="s1">&#39;apple&#39;</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="s1">&#39;21&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="n">s1</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">s1</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">s1</span><span class="o">.</span><span class="n">person_name</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">s1</span><span class="o">.</span><span class="n">speak</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 多继承</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Runner</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mode</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">mode</span> <span class="o">=</span> <span class="n">mode</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">speed</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;run:&#39;</span><span class="p">,</span> <span class="n">speed</span><span class="p">,</span> <span class="s1">&#39;mode:&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">mode</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">speak</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;speak:&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">mode</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">MuxPerson</span><span class="p">(</span><span class="n">Person</span><span class="p">,</span> <span class="n">Runner</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mux</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">mode</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">)</span>  <span class="c1"># 通过调用父类名进行初始化</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Runner</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mode</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">mux</span> <span class="o">=</span> <span class="n">mux</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">mux</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;mux:&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">mux</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">mp</span> <span class="o">=</span> <span class="n">MuxPerson</span><span class="p">(</span><span class="s1">&#39;raja&#39;</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="s1">&#39;normal&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">MuxPerson</span><span class="o">.</span><span class="vm">__mro__</span><span class="p">)</span>  <span class="c1"># 方法解析顺序</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">MuxPerson</span><span class="o">.</span><span class="vm">__bases__</span><span class="p">)</span>  <span class="c1"># 直接父类</span>
+</span></span></code></pre></div><h3 id="多态">多态</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 多态</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="o">*</span><span class="n">persons</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">person</span> <span class="ow">in</span> <span class="n">persons</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">person</span><span class="o">.</span><span class="n">speak</span><span class="p">()</span>  <span class="c1"># 尝试调用,子类没有寻找父类</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># 判断person对象是否是Person或其子类</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">person</span><span class="p">),</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">person</span><span class="p">,</span> <span class="n">Person</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">p1</span> <span class="o">=</span> <span class="n">Person</span><span class="p">(</span><span class="s1">&#39;raja&#39;</span><span class="p">,</span> <span class="mi">21</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">p2</span> <span class="o">=</span> <span class="n">Runner</span><span class="p">(</span><span class="s1">&#39;normal&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">func</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">)</span>
+</span></span></code></pre></div><h3 id="类的私有属性和方法">类的私有属性和方法</h3>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://raw.githubusercontent.com/0RAJA/img/main/image-20230113145858647.png"
+        data-srcset="https://raw.githubusercontent.com/0RAJA/img/main/image-20230113145858647.png, https://raw.githubusercontent.com/0RAJA/img/main/image-20230113145858647.png 1.5x, https://raw.githubusercontent.com/0RAJA/img/main/image-20230113145858647.png 2x"
+        data-sizes="auto"
+        alt="https://raw.githubusercontent.com/0RAJA/img/main/image-20230113145858647.png"
+        title="image-20230113145858647" /></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 类的私有属性和方法(非严格意义)</span>
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Private</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">__grade</span> <span class="o">=</span> <span class="mi">100</span>  <span class="c1"># 私有属性</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">__speak</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>  <span class="c1"># 私有方法</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;private:&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__grade</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># def _Private__speak(self, name):  # 无法访问</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">#     print(&#39;hhh:&#39;, name)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">Run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">__speak</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">private</span> <span class="o">=</span> <span class="n">Private</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="n">private</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="n">private</span><span class="o">.</span><span class="n">Run</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 直接调用私有化</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">private</span><span class="o">.</span><span class="n">_Private__grade</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">private</span><span class="o">.</span><span class="n">_Private__speak</span><span class="p">()</span>
+</span></span></code></pre></div><h3 id="类的静态方法和类方法">类的静态方法和类方法</h3>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://raw.githubusercontent.com/0RAJA/img/main/20230113165208-565-image-20230113151325488.png"
+        data-srcset="https://raw.githubusercontent.com/0RAJA/img/main/20230113165208-565-image-20230113151325488.png, https://raw.githubusercontent.com/0RAJA/img/main/20230113165208-565-image-20230113151325488.png 1.5x, https://raw.githubusercontent.com/0RAJA/img/main/20230113165208-565-image-20230113151325488.png 2x"
+        data-sizes="auto"
+        alt="https://raw.githubusercontent.com/0RAJA/img/main/20230113165208-565-image-20230113151325488.png"
+        title="image-20230113151325488" /></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 类的静态方法和实例方法</span>
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">StaticClass</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;raja&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="mi">21</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;init&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">set_age</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@staticmethod</span>  <span class="c1"># 静态方法：可以直接通过类名进行调用</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">static_method</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;static_method:&#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@classmethod</span>  <span class="c1"># 类方法：特殊的静态方法：可以调用类自身的属性和方法</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">class_method</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">cls</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span>  <span class="c1"># 默认不会调用init方法</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">cls</span><span class="o">.</span><span class="n">set_age</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;class_method:&#39;</span><span class="p">,</span> <span class="bp">cls</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="bp">cls</span><span class="o">.</span><span class="n">age</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">StaticClass</span><span class="o">.</span><span class="n">static_method</span><span class="p">(</span><span class="s1">&#39;raja&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">StaticClass</span><span class="o">.</span><span class="n">class_method</span><span class="p">()</span>
+</span></span></code></pre></div><h3 id="类的内置属性和方法">类的内置属性和方法</h3>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://raw.githubusercontent.com/0RAJA/img/main/20230113165318-047-image-20230113165317154.png"
+        data-srcset="https://raw.githubusercontent.com/0RAJA/img/main/20230113165318-047-image-20230113165317154.png, https://raw.githubusercontent.com/0RAJA/img/main/20230113165318-047-image-20230113165317154.png 1.5x, https://raw.githubusercontent.com/0RAJA/img/main/20230113165318-047-image-20230113165317154.png 2x"
+        data-sizes="auto"
+        alt="https://raw.githubusercontent.com/0RAJA/img/main/20230113165318-047-image-20230113165317154.png"
+        title="image-20230113165317154" /></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://raw.githubusercontent.com/0RAJA/img/main/20230113170234-669-image-20230113170233854.png"
+        data-srcset="https://raw.githubusercontent.com/0RAJA/img/main/20230113170234-669-image-20230113170233854.png, https://raw.githubusercontent.com/0RAJA/img/main/20230113170234-669-image-20230113170233854.png 1.5x, https://raw.githubusercontent.com/0RAJA/img/main/20230113170234-669-image-20230113170233854.png 2x"
+        data-sizes="auto"
+        alt="https://raw.githubusercontent.com/0RAJA/img/main/20230113170234-669-image-20230113170233854.png"
+        title="image-20230113170233854" /></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 类的内置属性和方法</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Vector</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;定义了向量及其加法&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>  <span class="c1"># 面向调试者</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="s1">&#39;(</span><span class="si">%d</span><span class="s1">,</span><span class="si">%d</span><span class="s1">)&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>  <span class="c1"># 面向程序使用者</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="s1">&#39;(</span><span class="si">%d</span><span class="s1">,</span><span class="si">%d</span><span class="s1">)&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">Vector</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;doc:&#39;</span><span class="p">,</span> <span class="n">Vector</span><span class="o">.</span><span class="vm">__doc__</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;name:&#39;</span><span class="p">,</span> <span class="n">Vector</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;module:&#39;</span><span class="p">,</span> <span class="n">Vector</span><span class="o">.</span><span class="vm">__module__</span><span class="p">)</span>  <span class="c1"># 所在模块</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;bases:&#39;</span><span class="p">,</span> <span class="n">Vector</span><span class="o">.</span><span class="vm">__bases__</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;dict:&#39;</span><span class="p">,</span> <span class="n">Vector</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">doc: 定义了向量及其加法
+</span></span></span><span class="line"><span class="cl"><span class="s2">name: Vector
+</span></span></span><span class="line"><span class="cl"><span class="s2">module: __main__
+</span></span></span><span class="line"><span class="cl"><span class="s2">bases: (&lt;class &#39;object&#39;&gt;,)
+</span></span></span><span class="line"><span class="cl"><span class="s2">dict: {&#39;__module__&#39;: &#39;__main__&#39;, &#39;__doc__&#39;: &#39;定义了向量及其加法&#39;, &#39;__init__&#39;: &lt;function Vector.__init__ at 0x7fe3a77b8790&gt;, &#39;__repr__&#39;: &lt;function Vector.__repr__ at 0x7fe3a77b8820&gt;, &#39;__add__&#39;: &lt;function Vector.__add__ at 0x7fe3a77b88b0&gt;, &#39;__dict__&#39;: &lt;attribute &#39;__dict__&#39; of &#39;Vector&#39; objects&gt;, &#39;__weakref__&#39;: &lt;attribute &#39;__weakref__&#39; of &#39;Vector&#39; objects&gt;}
+</span></span></span><span class="line"><span class="cl"><span class="s2">&#34;&#34;&#34;</span>
+</span></span></code></pre></div><p><strong>注意</strong>:python本身不支持方法重载,但可以看这篇<a href="https://juejin.cn/post/7021911561459466254" target="_blank" rel="noopener noreffer ">文章</a>了解另类实现.</p>
+<h2 id="装饰器和异常处理">装饰器和异常处理</h2>
+<h3 id="装饰器函数">装饰器函数</h3>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://raw.githubusercontent.com/0RAJA/img/main/20230113174505-407-image-20230113174504725.png"
+        data-srcset="https://raw.githubusercontent.com/0RAJA/img/main/20230113174505-407-image-20230113174504725.png, https://raw.githubusercontent.com/0RAJA/img/main/20230113174505-407-image-20230113174504725.png 1.5x, https://raw.githubusercontent.com/0RAJA/img/main/20230113174505-407-image-20230113174504725.png 2x"
+        data-sizes="auto"
+        alt="https://raw.githubusercontent.com/0RAJA/img/main/20230113174505-407-image-20230113174504725.png"
+        title="image-20230113174504725" /></p>
+<h4 id="函数参数传递">函数参数传递</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 函数参数传递</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">doing</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">	<span class="nd">@functools</span><span class="o">.</span><span class="n">wraps</span><span class="p">(</span><span class="n">doing</span><span class="p">)</span>  <span class="c1"># 记录并加入复制函数的名称,注释文档,参数列表,保证doing.__name__不被更改</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">inner</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;pre&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># 函数闭包:会携带引用对象</span>
+</span></span><span class="line"><span class="cl">        <span class="n">doing</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;next&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">inner</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">doing</span><span class="p">(</span><span class="n">data</span><span class="p">):</span> <span class="k">return</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;doing:&#34;</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">f</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="n">doing</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">f</span><span class="p">()</span>  <span class="c1"># doing: [1, 3, 4, -1]</span>
+</span></span><span class="line"><span class="cl"><span class="n">f</span><span class="p">()</span>  <span class="c1"># doing: [1, 3, 4, -1, -1]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">func</span><span class="p">(</span><span class="n">doing</span><span class="p">)()</span>  <span class="c1"># doing: [1, 3, 4, -1]</span>
+</span></span><span class="line"><span class="cl"><span class="n">func</span><span class="p">(</span><span class="n">doing</span><span class="p">)()</span>  <span class="c1"># doing: [1, 3, 4, -1]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 简写:注释</span>
+</span></span><span class="line"><span class="cl"><span class="nd">@func</span>  <span class="c1"># 相当于 doing2 = func(doing2)</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">doing2</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span> <span class="k">return</span> <span class="n">doing</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">doing2</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">doing2</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">next
+</span></span></span><span class="line"><span class="cl"><span class="s2">pre
+</span></span></span><span class="line"><span class="cl"><span class="s2">doing: [1, 3, 4, -1]
+</span></span></span><span class="line"><span class="cl"><span class="s2">next
+</span></span></span><span class="line"><span class="cl"><span class="s2">doing2
+</span></span></span><span class="line"><span class="cl"><span class="s2">&#34;&#34;&#34;</span>
+</span></span></code></pre></div><p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://raw.githubusercontent.com/0RAJA/img/main/20230113200253-251-image-20230113200252549.png"
+        data-srcset="https://raw.githubusercontent.com/0RAJA/img/main/20230113200253-251-image-20230113200252549.png, https://raw.githubusercontent.com/0RAJA/img/main/20230113200253-251-image-20230113200252549.png 1.5x, https://raw.githubusercontent.com/0RAJA/img/main/20230113200253-251-image-20230113200252549.png 2x"
+        data-sizes="auto"
+        alt="https://raw.githubusercontent.com/0RAJA/img/main/20230113200253-251-image-20230113200252549.png"
+        title="image-20230113200252549" /></p>
+<p>解决函数名称被更改的问题</p>
+<h4 id="装饰器函数-1">装饰器函数</h4>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://raw.githubusercontent.com/0RAJA/img/main/20230113201945-008-image-20230113201944294.png"
+        data-srcset="https://raw.githubusercontent.com/0RAJA/img/main/20230113201945-008-image-20230113201944294.png, https://raw.githubusercontent.com/0RAJA/img/main/20230113201945-008-image-20230113201944294.png 1.5x, https://raw.githubusercontent.com/0RAJA/img/main/20230113201945-008-image-20230113201944294.png 2x"
+        data-sizes="auto"
+        alt="https://raw.githubusercontent.com/0RAJA/img/main/20230113201945-008-image-20230113201944294.png"
+        title="image-20230113201944294" /></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 装饰器可以带参数(完整版)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">logging</span><span class="p">(</span><span class="n">level</span><span class="p">):</span>  <span class="c1"># 需要再嵌套一层</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">out_wrapper</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="nd">@functools</span><span class="o">.</span><span class="n">wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;[</span><span class="si">{}</span><span class="s2">]:enter:</span><span class="si">{}</span><span class="s2">()&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">level</span><span class="p">,</span> <span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">wrapper</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">out_wrapper</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">level</span> <span class="o">=</span> <span class="s1">&#39;info&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nd">@logging</span><span class="p">(</span><span class="n">level</span><span class="p">)</span>  <span class="c1"># @out_wrapper : hello=out_wrapper(hello)</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">hello</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">hello</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">hello</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</span></span></code></pre></div><h3 id="装饰器类">装饰器类</h3>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://raw.githubusercontent.com/0RAJA/img/main/20230113203938-812-image-20230113203937982.png"
+        data-srcset="https://raw.githubusercontent.com/0RAJA/img/main/20230113203938-812-image-20230113203937982.png, https://raw.githubusercontent.com/0RAJA/img/main/20230113203938-812-image-20230113203937982.png 1.5x, https://raw.githubusercontent.com/0RAJA/img/main/20230113203938-812-image-20230113203937982.png 2x"
+        data-sizes="auto"
+        alt="https://raw.githubusercontent.com/0RAJA/img/main/20230113203938-812-image-20230113203937982.png"
+        title="image-20230113203937982" /></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 装饰器类</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Decs</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="nd">@functools</span><span class="o">.</span><span class="n">wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">def</span> <span class="nf">inner</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;before function:&#34;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">result</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;after function:&#34;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="n">result</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">inner</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nd">@Decs</span><span class="p">(</span><span class="s1">&#39;raja&#39;</span><span class="p">)</span>  <span class="c1"># 等价于 func = Decs().__call__(func); func = Decs()(func)</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">func</span><span class="p">():</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;func()&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">func</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">before function
+</span></span></span><span class="line"><span class="cl"><span class="s2">func()
+</span></span></span><span class="line"><span class="cl"><span class="s2">after function
+</span></span></span><span class="line"><span class="cl"><span class="s2">func
+</span></span></span><span class="line"><span class="cl"><span class="s2">&#34;&#34;&#34;</span>
+</span></span></code></pre></div><h3 id="异常处理">异常处理</h3>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://raw.githubusercontent.com/0RAJA/img/main/20230113211807-728-image-20230113211807020.png"
+        data-srcset="https://raw.githubusercontent.com/0RAJA/img/main/20230113211807-728-image-20230113211807020.png, https://raw.githubusercontent.com/0RAJA/img/main/20230113211807-728-image-20230113211807020.png 1.5x, https://raw.githubusercontent.com/0RAJA/img/main/20230113211807-728-image-20230113211807020.png 2x"
+        data-sizes="auto"
+        alt="https://raw.githubusercontent.com/0RAJA/img/main/20230113211807-728-image-20230113211807020.png"
+        title="image-20230113211807020" /></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://raw.githubusercontent.com/0RAJA/img/main/20230113211902-341-image-20230113211901465.png"
+        data-srcset="https://raw.githubusercontent.com/0RAJA/img/main/20230113211902-341-image-20230113211901465.png, https://raw.githubusercontent.com/0RAJA/img/main/20230113211902-341-image-20230113211901465.png 1.5x, https://raw.githubusercontent.com/0RAJA/img/main/20230113211902-341-image-20230113211901465.png 2x"
+        data-sizes="auto"
+        alt="https://raw.githubusercontent.com/0RAJA/img/main/20230113211902-341-image-20230113211901465.png"
+        title="image-20230113211901465" /></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://raw.githubusercontent.com/0RAJA/img/main/20230113212038-609-image-20230113212037598.png"
+        data-srcset="https://raw.githubusercontent.com/0RAJA/img/main/20230113212038-609-image-20230113212037598.png, https://raw.githubusercontent.com/0RAJA/img/main/20230113212038-609-image-20230113212037598.png 1.5x, https://raw.githubusercontent.com/0RAJA/img/main/20230113212038-609-image-20230113212037598.png 2x"
+        data-sizes="auto"
+        alt="https://raw.githubusercontent.com/0RAJA/img/main/20230113212038-609-image-20230113212037598.png"
+        title="image-20230113212037598" /></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://raw.githubusercontent.com/0RAJA/img/main/20230113213024-774-image-20230113213023961.png"
+        data-srcset="https://raw.githubusercontent.com/0RAJA/img/main/20230113213024-774-image-20230113213023961.png, https://raw.githubusercontent.com/0RAJA/img/main/20230113213024-774-image-20230113213023961.png 1.5x, https://raw.githubusercontent.com/0RAJA/img/main/20230113213024-774-image-20230113213023961.png 2x"
+        data-sizes="auto"
+        alt="https://raw.githubusercontent.com/0RAJA/img/main/20230113213024-774-image-20230113213023961.png"
+        title="image-20230113213023961" /></p>
+<h2 id="python的实用工具">python的实用工具</h2>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://raw.githubusercontent.com/0RAJA/img/main/20230113220701-543-image-20230113220700288.png"
+        data-srcset="https://raw.githubusercontent.com/0RAJA/img/main/20230113220701-543-image-20230113220700288.png, https://raw.githubusercontent.com/0RAJA/img/main/20230113220701-543-image-20230113220700288.png 1.5x, https://raw.githubusercontent.com/0RAJA/img/main/20230113220701-543-image-20230113220700288.png 2x"
+        data-sizes="auto"
+        alt="https://raw.githubusercontent.com/0RAJA/img/main/20230113220701-543-image-20230113220700288.png"
+        title="image-20230113220700288" /></p>
+<h3 id="pep8规范">pep8规范</h3>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://raw.githubusercontent.com/0RAJA/img/main/20230113221645-036-image-20230113221643793.png"
+        data-srcset="https://raw.githubusercontent.com/0RAJA/img/main/20230113221645-036-image-20230113221643793.png, https://raw.githubusercontent.com/0RAJA/img/main/20230113221645-036-image-20230113221643793.png 1.5x, https://raw.githubusercontent.com/0RAJA/img/main/20230113221645-036-image-20230113221643793.png 2x"
+        data-sizes="auto"
+        alt="https://raw.githubusercontent.com/0RAJA/img/main/20230113221645-036-image-20230113221643793.png"
+        title="image-20230113221643793" /></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://raw.githubusercontent.com/0RAJA/img/main/20230113221740-591-image-20230113221739256.png"
+        data-srcset="https://raw.githubusercontent.com/0RAJA/img/main/20230113221740-591-image-20230113221739256.png, https://raw.githubusercontent.com/0RAJA/img/main/20230113221740-591-image-20230113221739256.png 1.5x, https://raw.githubusercontent.com/0RAJA/img/main/20230113221740-591-image-20230113221739256.png 2x"
+        data-sizes="auto"
+        alt="https://raw.githubusercontent.com/0RAJA/img/main/20230113221740-591-image-20230113221739256.png"
+        title="image-20230113221739256" /></p>
+<h3 id="requests">requests</h3>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://raw.githubusercontent.com/0RAJA/img/main/20230113223208-252-image-20230113223207616.png"
+        data-srcset="https://raw.githubusercontent.com/0RAJA/img/main/20230113223208-252-image-20230113223207616.png, https://raw.githubusercontent.com/0RAJA/img/main/20230113223208-252-image-20230113223207616.png 1.5x, https://raw.githubusercontent.com/0RAJA/img/main/20230113223208-252-image-20230113223207616.png 2x"
+        data-sizes="auto"
+        alt="https://raw.githubusercontent.com/0RAJA/img/main/20230113223208-252-image-20230113223207616.png"
+        title="image-20230113223207616" /></p>
+<h3 id="xlrdxlwt">xlrd,xlwt</h3>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://raw.githubusercontent.com/0RAJA/img/main/20230113223511-867-image-20230113223510976.png"
+        data-srcset="https://raw.githubusercontent.com/0RAJA/img/main/20230113223511-867-image-20230113223510976.png, https://raw.githubusercontent.com/0RAJA/img/main/20230113223511-867-image-20230113223510976.png 1.5x, https://raw.githubusercontent.com/0RAJA/img/main/20230113223511-867-image-20230113223510976.png 2x"
+        data-sizes="auto"
+        alt="https://raw.githubusercontent.com/0RAJA/img/main/20230113223511-867-image-20230113223510976.png"
+        title="image-20230113223510976" /></p>
+<h3 id="zipfile">zipfile</h3>
+<p>创建和读取压缩包</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://raw.githubusercontent.com/0RAJA/img/main/20230113223610-621-image-20230113223609906.png"
+        data-srcset="https://raw.githubusercontent.com/0RAJA/img/main/20230113223610-621-image-20230113223609906.png, https://raw.githubusercontent.com/0RAJA/img/main/20230113223610-621-image-20230113223609906.png 1.5x, https://raw.githubusercontent.com/0RAJA/img/main/20230113223610-621-image-20230113223609906.png 2x"
+        data-sizes="auto"
+        alt="https://raw.githubusercontent.com/0RAJA/img/main/20230113223610-621-image-20230113223609906.png"
+        title="image-20230113223609906" /></p>
+<h3 id="shutil">shutil</h3>
+<p>文件,文件夹,压缩包处理模块</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://raw.githubusercontent.com/0RAJA/img/main/20230113223719-055-image-20230113223718164.png"
+        data-srcset="https://raw.githubusercontent.com/0RAJA/img/main/20230113223719-055-image-20230113223718164.png, https://raw.githubusercontent.com/0RAJA/img/main/20230113223719-055-image-20230113223718164.png 1.5x, https://raw.githubusercontent.com/0RAJA/img/main/20230113223719-055-image-20230113223718164.png 2x"
+        data-sizes="auto"
+        alt="https://raw.githubusercontent.com/0RAJA/img/main/20230113223719-055-image-20230113223718164.png"
+        title="image-20230113223718164" /></p>
+<blockquote>
+<p><a href="https://github.com/0RAJA/python-learn/blob/master/demo1.py" target="_blank" rel="noopener noreffer ">完整代码</a></p>
+</blockquote></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2023-01-13</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://raja-blog.netlify.app/posts/python%E5%85%A5%E9%97%A8/" data-title="Python入门" data-hashtags="python,总结"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://raja-blog.netlify.app/posts/python%E5%85%A5%E9%97%A8/" data-hashtag="python"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://raja-blog.netlify.app/posts/python%E5%85%A5%E9%97%A8/" data-title="Python入门"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://raja-blog.netlify.app/posts/python%E5%85%A5%E9%97%A8/" data-title="Python入门"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://raja-blog.netlify.app/posts/python%E5%85%A5%E9%97%A8/" data-title="Python入门"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/python/">python</a>,&nbsp;<a href="/tags/%E6%80%BB%E7%BB%93/">总结</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/go%E6%B7%B1%E5%85%A5%E5%AD%A6%E4%B9%A0/" class="prev" rel="prev" title="Go深入学习"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Go深入学习</a></div>
+</div>
+<div id="comments"><div id="giscus" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://giscus.app">Giscus</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.105.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://github.com/0RAJA" target="_blank">raja</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.13.1/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/copy-tex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{"giscus":{"category":"Announcements","categoryId":"DIC_kwDOIdtRfc4CSqao","darkTheme":"dark_dimmed","emitMetadata":"0","inputPosition":"top","lang":"zh-CN","lazyLoading":true,"lightTheme":"light","mapping":"title","reactionsEnabled":"1","repo":"0RAJA/raja-blog","repoId":"R_kgDOIdtRfQ"}},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"algoliaAppID":"IOOMILZOV0","algoliaIndex":"index","algoliaSearchKey":"fb0fb8983e485d5752843aa8ddbf25be","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":50,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
