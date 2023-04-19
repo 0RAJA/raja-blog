@@ -465,21 +465,21 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
         darkTheme = "github-dark"
       # giscus comment 评论系统设置 (https://giscus.app/zh-CN)
       [params.page.comment.giscus]
-        # 你可以参考官方文档来使用下列配置
         enable = true
-        repo = "0RAJA/raja-blog"
-        repoId = "R_kgDOIdtRfQ"
-        category = "Announcements"
-        categoryId = "DIC_kwDOIdtRfc4CSqao"
+        # 你可以参考官方文档来使用下列配置
+        dataRepo = "0RAJA/raja-blog"
+        dataRepoId = "R_kgDOIdtRfQ"
+        dataCategory = "Announcements"
+        dataCategoryId = "DIC_kwDOIdtRfc4CSqao"
         # 为空时自动适配当前主题 i18n 配置
-        lang = "zh-CN"
-        mapping = "title"
-        reactionsEnabled = "1"
-        emitMetadata = "0"
-        inputPosition = "top"
-        lazyLoading = true
+        dataMapping = "title"
+        dataReactionsEnabled = "1"
+        dataEmitMetadata = "0"
+        dataInputPosition = "top"
         lightTheme = "light"
         darkTheme = "dark_dimmed"
+        dataLang = "zh-CN"
+        dataLoading = "lazy"
     # LoveIt 新增 | 0.2.7 第三方库配置
     [params.page.library]
       [params.page.library.css]

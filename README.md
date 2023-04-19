@@ -8,6 +8,9 @@
 
 **一个简单的博客网站,用于记录自己的点点滴滴**
 
+# 安装主题(子模块)
+`git submodule update --init --recursive `
+
 # 友情链接使用方法:
 
 >
