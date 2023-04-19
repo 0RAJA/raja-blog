@@ -81,16 +81,16 @@ GET _analyze
 
 ## Elasticsearch 目录结构
 
-| **目录名称** | **描述**                                                     |
-| :----------- | :----------------------------------------------------------- |
-| bin          | 可执行脚本文件，包括启动 elasticsearch 服务、插件管理、函数命令等。 |
-| config       | 配置文件目录，如 elasticsearch 配置、角色配置、jvm 配置等。  |
-| lib          | elasticsearch 所依赖的 java 库。                             |
-| data         | 默认的数据存放目录，包含节点、分片、索引、文档的所有数据，生产环境要求必须修改。 |
-| logs         | 默认的日志文件存储路径，生产环境务必修改。                   |
-| modules      | 包含所有的 Elasticsearch 模块，如 Cluster、Discovery、Indices 等。 |
-| plugins      | 已经安装的插件的目录。                                       |
-| jdk/jdk.app  | 7.x 以后特有，自带的 java 环境，8.x 版本自带 jdk 17          |
+|**目录名称**|**描述**|
+| :----------| :-------------------------------------------------------------------------------|
+|bin|可执行脚本文件，包括启动 elasticsearch 服务、插件管理、函数命令等。|
+|config|配置文件目录，如 elasticsearch 配置、角色配置、jvm 配置等。|
+|lib|elasticsearch 所依赖的 java 库。|
+|data|默认的数据存放目录，包含节点、分片、索引、文档的所有数据，生产环境要求必须修改。|
+|logs|默认的日志文件存储路径，生产环境务必修改。|
+|modules|包含所有的 Elasticsearch 模块，如 Cluster、Discovery、Indices 等。|
+|plugins|已经安装的插件的目录。|
+|jdk/jdk.app|7.x 以后特有，自带的 java 环境，8.x 版本自带 jdk 17|
 
 ## 基础配置
 
@@ -105,7 +105,7 @@ GET _analyze
 1. 天生支持分布式的搜索,聚合分析和存储引擎
 2. OLAP 系统
 
-   ![img](https://s3.51cto.com/oss/202103/13/d8ced3196edd57413caa2d6e5d5dfbb1.png)
+   ![img](https://raw.githubusercontent.com/0RAJA/img/main/20230420015049-914-d8ced3196edd57413caa2d6e5d5dfbb1.png)
 3. 特点
 
    ![image-20230410205931932](https://raw.githubusercontent.com/0RAJA/img/main/20230420012033-324-image-20230410205931932-20230411101227-7afjwai.png)
@@ -122,23 +122,23 @@ GET _analyze
    4. 不支持事务
 5. 选型
 
-   |                  | Elasticsearch                  | Solr                                                      | MongoDB                    | MySQL                |
-   | :--------------- | :----------------------------- | :-------------------------------------------------------- | :------------------------- | :------------------- |
-   | DB 类型          | 搜索引擎                       | 搜索引擎                                                  | 文档数据库                 | 关系型数据库         |
-   | 基于何种框架开发 | Lucene                         | Lucene                                                    |                            |                      |
-   | 基于何种开发语言 | Java                           | Java                                                      | C++                        | C、C++               |
-   | 数据结构         | FST、Hash 等                   |                                                           |                            | B+ Trees             |
-   | 数据格式         | Json                           | Json/XML/CSV                                              | Json                       | Row                  |
-   | 分布式支持       | 原生支持                       | 支持                                                      | 原生支持                   | 不支持               |
-   | 数据分区方案     | 分片                           | 分片                                                      | 分片                       | 分库分表             |
-   | 业务系统类型     | OLAP                           | OLAP                                                      | OLTP                       | OLTP                 |
-   | 事务支持         | 不支持                         | 不支持                                                    | 多文档 ACID 事务           | 支持                 |
-   | 数据量级         | PB 级                          | TB 级~PB 级                                               | PB 级                      | 单库 3000 万         |
-   | 一致性策略       | 最终一致性                     | 最终一致性                                                | 最终一致性即时一致性       | 即时一致性           |
-   | 擅长领域         | 海量数据全文检索大数据聚合分析 | 大数据全文检索                                            | 海量数据 CRUD              | 强一致性 ACID 事务   |
-   | 劣势             | 不支持事务写入实时性低         | 海量数据的性能不如 ES 随着数据量的不断增大，稳定性低于 ES | 弱事务支持不支持 join 查询 | 大数据全文搜索性能低 |
-   | 查询性能         | ★★★★★                          | ★★★★                                                      | ★★★★★                      | ★★★                  |
-   | 写入性能         | ★★                             | ★★                                                        | ★★★★                       | ★★★                  |
+   ||Elasticsearch|Solr|MongoDB|MySQL|
+   | :---------------| :-----------------------------| :--------------------------------------------------------| :-------------------------| :-------------------|
+   |DB 类型|搜索引擎|搜索引擎|文档数据库|关系型数据库|
+   |基于何种框架开发|Lucene|Lucene|||
+   |基于何种开发语言|Java|Java|C++|C、C++|
+   |数据结构|FST、Hash 等|||B+ Trees|
+   |数据格式|Json|Json/XML/CSV|Json|Row|
+   |分布式支持|原生支持|支持|原生支持|不支持|
+   |数据分区方案|分片|分片|分片|分库分表|
+   |业务系统类型|OLAP|OLAP|OLTP|OLTP|
+   |事务支持|不支持|不支持|多文档 ACID 事务|支持|
+   |数据量级|PB 级|TB 级~PB 级|PB 级|单库 3000 万|
+   |一致性策略|最终一致性|最终一致性|最终一致性即时一致性|即时一致性|
+   |擅长领域|海量数据全文检索大数据聚合分析|大数据全文检索|海量数据 CRUD|强一致性 ACID 事务|
+   |劣势|不支持事务写入实时性低|海量数据的性能不如 ES 随着数据量的不断增大，稳定性低于 ES|弱事务支持不支持 join 查询|大数据全文搜索性能低|
+   |查询性能|★★★★★|★★★★|★★★★★|★★★|
+   |写入性能|★★|★★|★★★★|★★★|
 
 # 核心概念
 
@@ -214,11 +214,11 @@ GET product/user,order/_search
 
 最初，“索引”类似于 SQL 数据库中的“数据库”，“类型”相当于“表”。即
 
-| 元字段 | ES 6.x 及早期版本 | ES 7.x 及之后版本 |
-| :----- | :---------------- | :---------------- |
-| _index | DataBase          | Table             |
-| _type  | Table             | 固定为：“_doc”    |
-| _doc   | Row               | Row               |
+|元字段|ES 6.x 及早期版本|ES 7.x 及之后版本|
+| :-----| :----------------| :----------------|
+|_index|DataBase|Table|
+|_type|Table|固定为：“_doc”|
+|_doc|Row|Row|
 
 - **逻辑不合理**：然而这是错误的类比，官方后来也意识到了这是个错误。在 SQL 数据库中，表是相互独立的。一个表中的列与另一个表中的同名列无关。对于映射类型中的字段，情况并非如此。
 - **数据结构混乱**：在 Elasticsearch 索引中，不同映射类型中具有相同名称的字段在内部由相同的 Lucene 字段支持。换句话说，使用上面的示例，类型中的 user_name 字段与 user 和 order 类型中的字段存储在完全相同的 user_name 字段中 ，并且两个 user_name 字段在两种类型中必须具有相同的映射（定义）。
@@ -267,8 +267,8 @@ PUT {index}/_doc/{id}和POST {index}/_doc
 
 **ES 8.x**
 
-- **不再支持**在请求中指定类型。
-- 该 `include_type_name` 参数被删除。
+- **不再支持**​在请求中指定类型。
+- 该 `include_type_name` ​参数被删除。
 
 ## 文档
 
@@ -301,7 +301,7 @@ ES 是自动发现的，即零配置，开箱即用，无需任何网络配置�
 - **discovery.seed_hosts**：此设置提供集群中**其他候选节点的列表**，并且可能处于活动状态且可联系以播种[发现过程](https://www.elastic.co/guide/en/elasticsearch/reference/current/modules-discovery-hosts-providers.html)。每个地址可以是 IP 地址，也可以是通过 DNS 解析为一个或多个 IP 地址的主机名。
 - **cluster.initial_master_nodes**：指定集群**初次选举**中用到的**候选节点**，称为集群引导，只在第一次形成集群时需要，如过配置了 network.host，则此配置项必须配置。重新启动节点或将新节点添加到现有集群时不要使用此设置。
 
-### 集群的健康值检查
+### 集群的​健康​值检查
 
 #### 健康状态
 
@@ -313,24 +313,24 @@ ES 是自动发现的，即零配置，开箱即用，无需任何网络配置�
 
 > **新手误区：对不同健康状态下的可用性描述，集群不可用指的是集群状态为红色，无法提供完整读写服务，而不代表无法通过客户端远程连接和调用服务。**
 
-![image](https://raw.githubusercontent.com/0RAJA/img/main/20230420012033-325-image-20230411131731-gs9hqmi.png)
+![image](https://raw.githubusercontent.com/0RAJA/img/main/20230420012033-325-image-20230411131731-gs9hqmi.png)​
 
 #### 健康值检查
 
-1. `_cat API`
+1. `_cat API`​
 
-   `GET _cat/health?v`
-
-   返回结果
-
-   ![image](https://raw.githubusercontent.com/0RAJA/img/main/20230420012033-325-image-20230411132411-1ihk48o.png)
-2. `_cluster API`
-
-   `GET _cluster/health`
+   `GET _cat/health?v`​
 
    返回结果
 
-   ![image](https://raw.githubusercontent.com/0RAJA/img/main/20230420012033-325-image-20230411132726-n9aj3sn.png)
+   ![image](https://raw.githubusercontent.com/0RAJA/img/main/20230420012033-325-image-20230411132411-1ihk48o.png)​​
+2. `_cluster API`​
+
+   `GET _cluster/health`​
+
+   返回结果
+
+   ![image](https://raw.githubusercontent.com/0RAJA/img/main/20230420012033-325-image-20230411132726-n9aj3sn.png)​
 
 ### 集群的故障诊断
 
@@ -340,15 +340,15 @@ ES 是自动发现的，即零配置，开箱即用，无需任何网络配置�
 
 **常用 APIs：**
 
-* `_cat/indices?health=yellow&v=true`：查看当前集群中的所有索引
-* `_cat/health?v=true`：查看健康状态
-* `_cat/nodeattrs`：查看节点属性
-* `_cat/nodes?v`：查看集群中的节点
-* `_cat/shards`：查看集群中所有分片的分配情况
+* `_cat/indices?health=yellow&v=true`​：查看当前集群中的所有索引
+* `_cat/health?v=true`​：查看健康状态
+* `_cat/nodeattrs`​：查看节点属性
+* `_cat/nodes?v`​：查看集群中的节点
+* `_cat/shards`​：查看集群中所有分片的分配情况
 
 #### Cluster APIs
 
-* `_cluster/allocation/explain`：可用于诊断分片未分配原因
+* `_cluster/allocation/explain`​：可用于诊断分片未分配原因
 
   ```json
   GET _cluster/allocation/explain
@@ -359,7 +359,7 @@ ES 是自动发现的，即零配置，开箱即用，无需任何网络配置�
   }
   ```
 
-* `_cluster/health/ `：检查集群状态
+* `_cluster/health/ ​`​​：检查集群状态
 
 #### 索引未分配的原因
 
@@ -393,8 +393,8 @@ ES 是自动发现的，即零配置，开箱即用，无需任何网络配置�
 * 每个分片都是一个 Lucene 实例，有完整的创建索引和处理请求的能力
 * ES 会自动再 nodes 上做分片均衡 shard reblance (**节点离开和加入时延时触发**)
 * 一个 doc 不可能同时存在于多个主分片中，但是当每个主分片的副本数量不为一时，可以同时存在于多个副本中。
-* `主分片和其副本分片` 不能同时存在于同一个节点上。
-* `完全相同的副本` 不能同时存在于同一个节点上。
+* `主分片和其副本分片` ​不能同时存在于同一个节点上。
+* `完全相同的副本` ​不能同时存在于同一个节点上。
 
 #### 分片的作用和意义
 
@@ -425,9 +425,9 @@ GET /_search
 
 基本语法
 
-1. 创建索引时指定 `settings`
+1. 创建索引时指定 `settings`​
 
-   `PUT <index_name>`
+   `PUT <index_name>`​
 
    eg:**创建主分片为 1,备份为 1 的索引**
 
@@ -440,11 +440,11 @@ GET /_search
      }
    }
    ```
-2. 修改 `settngs`
+2. 修改 `settngs`​
 
-   使用 `_setting` 只能修改允许动态修改的配置项
+   使用 `_setting` ​只能修改允许动态修改的配置项
 
-   `PUT /<index_name>/_settings`
+   `PUT /<index_name>/_settings`​
 
    eg:**修改主分片备份节点**
 
@@ -454,7 +454,7 @@ GET /_search
      "number_of_replicas": 1
    }
    ```
-3. 静态索引 `settings`
+3. 静态索引 `settings`​
 
    只能在创建索引时或在关闭状态的索引上设置。
 
@@ -463,14 +463,14 @@ GET /_search
    * **index.number_of_shards**：索引的主分片的个数，默认为 1，此设置只能在创建索引时设置
 
    每个索引的分片的数量上限为 1024，这是一个安全限制，以防止意外创建索引，这些索引可能因资源分配而破坏集群的稳定性。export ES_JAVA_OPTS=“-Des.index.max_number_of_shards=128” 可以通过在属于集群的每个节点上指定系统属性来修改限制
-4. 动态索引 `settings`
-   即可以使用 `_setting API` 在实时修改的配置项。
+4. 动态索引 `settings`​
+   即可以使用 `_setting API` ​在实时修改的配置项。
 
    **重要的动态配置**
 
    * **index.number_of_replicas：**每个主分片的副本数。默认为 1，允许配置为 0。
    * **index.refresh_interval：**执行刷新操作的频率，默认为 1s. 可以设置 -1 为禁用刷新。
-   * **index.max_result_window： **`from + size` 搜索此索引 的最大值。默认为 **10000**.
+   * **index.max_result_window： ​**​`from + size` ​搜索此索引 的最大值。默认为 **10000**.
 
      搜索请求占用堆内存和时间 from + size，这限制了内存。请参阅 Scroll 或 Search After 以获得更有效的替代方法。
 
@@ -480,25 +480,25 @@ GET /_search
 
 1. 基本语法
 
-   `PUT <index_name>`
+   `PUT <index_name>`​
 
-   * `index_name` 索引名
+   * `index_name` ​索引名
 2. 索引明明规范
 
    * 必须全部小写
-   * 索引名称中不能包含以下符号：`\`、`/`、`*`、`?`、`"`、`<`、`>`、`|`、`<span> </span>` 空白符号、`,`、`#`
+   * 索引名称中不能包含以下符号：`\`​、`/`​、`*`​、`?`​、`"`​、`<`​、`>`​、`|`​、`<span> </span>` ​空白符号、`,`​、`#`​
    * 7.0 之前的索引可以包含冒号英文冒号 : ，但在 7.x 及之后版本中不再受支持。
    * 不使用中文命名索引
-   * 可以使用 `-`、`_` 或者 `+` 三种符号，但是不能以这三种符号开头。
-   * 不能是 `.` 或者 `..`
+   * 可以使用 `-`​、`_` ​或者 `+` ​三种符号，但是不能以这三种符号开头。
+   * 不能是 `.` ​或者 `..`​
    * 不能超过 255 个字节长度
-   * 业务索引不能以 `.` 开头，因为这些索引是给 `内部索引（如数据流中的后备索引）` 和 `隐藏索引` 使用的
+   * 业务索引不能以 `.` ​开头，因为这些索引是给 `内部索引（如数据流中的后备索引）` ​和 `隐藏索引` ​使用的
 
    **总结：如过记不住这些规则，请牢记以下几点**
 
    * 以小写英文字母命名索引
-   * 不要使用 `驼峰` 或者 `帕斯卡` 命名法则
-   * 如过出现多个单词的索引名称，以全小写 + 下划线分隔的方式：如 `test_index`。
+   * 不要使用 `驼峰` ​或者 `帕斯卡` ​命名法则
+   * 如过出现多个单词的索引名称，以全小写 + 下划线分隔的方式：如 `test_index`​​。
 
 #### 删除索引
 
@@ -514,7 +514,7 @@ GET /_search
 
 1. 基本语法
 
-   `HEAD <index_name>`
+   `HEAD <index_name>`​
 
 #### 索引的不可变性
 
@@ -564,15 +564,15 @@ enum OpType {
 
 ##### Create 创建
 
-如果在 PUT 数据的时候当前数据已经存在，则数据会被覆盖，**如果在 PUT 的时候指定操作类型 **`create`，**此时如果数据已存在则会返回失败**，因为已经强制指定了操作类型为 create，ES 就不会再去执行 update 操作。
+如果在 PUT 数据的时候当前数据已经存在，则数据会被覆盖，**如果在 PUT 的时候指定操作类型 ​**​`create`​，**此时如果数据已存在则会返回失败**，因为已经强制指定了操作类型为 create，ES 就不会再去执行 update 操作。
 
 1. 基本语法
 
-   `PUT /<index_name>/_doc/<_id>?op_type=create`
+   `PUT /<index_name>/_doc/<_id>?op_type=create`​
 
    **案例**
 
-   在 `test_index` 索引下使用 `create` 方式创建一个文档
+   在 `test_index` ​索引下使用 `create` ​方式创建一个文档
 
    ```json
    PUT test_create/_doc/1?op_type=create
@@ -593,7 +593,7 @@ enum OpType {
    ```
 2. 自动生成 ID
 
-   `POST /<target>/_doc/`
+   `POST /<target>/_doc/`​
 
    **案例**
 
@@ -630,12 +630,12 @@ enum OpType {
 
 1. **查询指定 id 的文档**
 
-   `GET <index>/_doc/<_id>`
+   `GET <index>/_doc/<_id>`​
 2. **判断指定 id 的文档是否存在**
 
-   `HEAD  <index>/_doc/<_id>`
+   `HEAD  <index>/_doc/<_id>`​
 
-   > 通过 HEAD 判断文档是否存在的使用场景很局限，因为其完全可以被 GET 所取代，比如下列查询，当 id 为 1 的文档不存在的时候，返回 `found：false`
+   > 通过 HEAD 判断文档是否存在的使用场景很局限，因为其完全可以被 GET 所取代，比如下列查询，当 id 为 1 的文档不存在的时候，返回 `found：false`​
    >
 
    ```json
@@ -652,17 +652,17 @@ enum OpType {
 
    使用 _source API 可以打开或者关闭源数据字段，true 为打开，false 为关闭，默认为 true。
 
-   `GET <index>/_doc/<_id>?_source=false`
+   `GET <index>/_doc/<_id>?_source=false`​
 
-   也可以只查询 `source` 字段
+   也可以只查询 `source` ​字段
 
-   `GET <index>/_source/<_id>?`
+   `GET <index>/_source/<_id>?`​
 
 ##### DELETE API
 
 删除索引中指定 id 的文档，Document Delete API 必须指定 id
 
-`DELETE /<index>/_doc/<_id>`
+`DELETE /<index>/_doc/<_id>`​
 
 ##### UPDATE API
 
@@ -806,7 +806,7 @@ POST /<index>/_update/<_id>
    }
    ```
 
-2. 使用 `term` 过滤器匹配 `test_field` 字段值为 `test` 的文档
+2. 使用 `term` ​过滤器匹配 `test_field` ​字段值为 `test` ​的文档
 
    ```json
    POST /test_create/_delete_by_query
@@ -827,33 +827,33 @@ POST /<index>/_update/<_id>
 
 1. ### 介绍
 
-   类似关系型数据库中 `表结构` 的概念,在 `Mapping` 里包含了一些属性，比如**字段名称**、**类型**、**字段使用的分词器**、**是否评分**、**是否创建索引等属性**，并且在 ES 中**一个字段可以有对个类型。**
+   类似关系型数据库中 `表结构` ​的概念,在 `Mapping` ​里包含了一些属性，比如**字段名称**、**类型**、**字段使用的分词器**、**是否评分**、**是否创建索引等属性**，并且在 ES 中**一个字段可以有对个类型。**
 
-   ![image](https://raw.githubusercontent.com/0RAJA/img/main/20230420012033-325-image-20230413204350-e5ea3mi.png)
+   ![image](https://raw.githubusercontent.com/0RAJA/img/main/20230420012033-325-image-20230413204350-e5ea3mi.png)​
 2. ### 查看索引映射
 
    1. 查看完整映射
 
-      `GET /<index_name>/_mappings`
+      `GET /<index_name>/_mappings`​
    2. 查看索引中指定字段的映射
 
-      `GET /<index_name>/_mappings/field/<field_name>`
+      `GET /<index_name>/_mappings/field/<field_name>`​
 
       举例
 
-      `GET test_create/_mapping/field/content`
+      `GET test_create/_mapping/field/content`​
 
-      ![image](https://raw.githubusercontent.com/0RAJA/img/main/20230420012033-325-image-20230413204922-f5tjnxu.png)
+      ![image](https://raw.githubusercontent.com/0RAJA/img/main/20230420012033-325-image-20230413204922-f5tjnxu.png)​
 
 ## 自动映射 dynamic mapping
 
-自动映射是 ES 在索引文档写入时自动创建 `Mapping` 的一种机制.
+自动映射是 ES 在索引文档写入时自动创建 `Mapping` ​的一种机制.
 
 ### 自动类型推断规则
 
 **自动映射器会尽可能的把字段映射为宽字段类型。**
 
-![image](https://raw.githubusercontent.com/0RAJA/img/main/20230420012033-325-image-20230413205510-j2968vk.png)
+![image](https://raw.githubusercontent.com/0RAJA/img/main/20230420012033-325-image-20230413205510-j2968vk.png)​
 
 ### mapping 的使用禁忌
 
@@ -862,7 +862,7 @@ POST /<index>/_update/<_id>
   在 Elasticsearch 中，不会自动进行数据类型的转换。比如，在建立索引时，如果某个字段的类型为 integer  ，那么如果尝试向该字段中插入一个字符串类型的值，Elasticsearch 会直接报错，而不是试图将字符串转换为整数并存储。这也意味着，如果想要存储的数据类型与已有的 Mapping 定义不一致，开发者必须显式地将数据类型进行转换。
 * ES 不支持类型修改
 
-  这里指的是 Elasticsearch 不允许直接修改现有 `Mapping` 的属性。比如，如果想将一个已经建好的索引中某个字段的数据类型由   string   修改为   integer  ，需要重建该索引。**目前，Elasticsearch 只允许在新增字段时添加类型约束**。
+  这里指的是 Elasticsearch 不允许直接修改现有 `Mapping`​ 的属性。比如，如果想将一个已经建好的索引中某个字段的数据类型由   string   修改为   integer  ，需要重建该索引。**目前，Elasticsearch 只允许在新增字段时添加类型约束**。
 * 生产环境尽可能的避免使用 dynamic mapping
 
   在 Elasticsearch 中，一个开关  dynamic  决定是否开启动态 mapping，即是否允许 Elasticsearch 自动创建 Mapping。
@@ -892,7 +892,7 @@ POST /<index>/_update/<_id>
    ```
 2. 样例
 
-   创建 `goods` 索引的 `mapping`
+   创建 `goods` ​索引的 `mapping`​
 
    ```json
    PUT goods
@@ -990,14 +990,14 @@ POST /<index>/_update/<_id>
 
   keyword、数值类型等
 
-当然数据类型的划分可以分为很多种，比如按照 `基本数据类型和复杂数据类型` 来划分
+当然数据类型的划分可以分为很多种，比如按照 `基本数据类型和复杂数据类型` ​来划分
 
 ### ES 支持的数据类型
 
 #### 基本数据类型
 
 * **Numbers**：数字类型，包含很多具体的基本数据类型
-  ![在这里插入图片描述](https://img-blog.csdnimg.cn/25b608a44a154723adf9260fa5c2fa6d.jpeg#pic_center)
+  ​![在这里插入图片描述](https://raw.githubusercontent.com/0RAJA/img/main/20230420013736-396-25b608a44a154723adf9260fa5c2fa6d.jpeg)​
 * **binary**：编码为 Base64 字符串的二进制值。
 * **boolean**：即布尔类型，接受 true 和 false。
 * **alias**：字段别名。
@@ -1050,37 +1050,37 @@ POST /<index>/_update/<_id>
 
 ## 映射参数
 
-| **参数名称**           | **释义**                                                     |
-| ---------------------- | ------------------------------------------------------------ |
-| **analyzer** ★         | **指定分析器，只有 text 类型字段支持。**                     |
-| coerce                 | 是否允许强制类型转换，支持对字段段度 设置或者对整个索引设置。<br />true： “1” => 1<br />false： “1” =< 1<br />索引级设置<br />![image](https://raw.githubusercontent.com/0RAJA/img/main/20230420012033-325-image-20230417202425-9djxgwi.png)<br />字段级设置<br />![image](https://raw.githubusercontent.com/0RAJA/img/main/20230420012033-325-image-20230417202210-g2ujfjs.png)<br /> |
-|                        |                                                              |
-| copy_to                | 该参数允许将多个字段的值复制到组字段中，然后可以将其作为单个字段进行查询<br /><br /> |
-| **doc_values** ★       | 为了提升排序和聚合效率，默认 true，如果确定不需要对字段进行排序或聚合，也不需要通过脚本访问字段值，则可以禁用 doc 值以节省磁盘空间（不支持 text 和 annotated_text）在 `开源社区 ES 8.x:进阶篇 - 深入聚合原理` 章节中会深入讲解 |
-| dynamic ★              | 控制是否可以动态添加新字段<br />支持以下四个选项：<br />**true**：（默认）允许动态映射<br />**false**：忽略新字段。这些字段不会被索引或搜索，但仍会出现在_source 返回的命中字段中。这些字段不会添加到映射中，必须显式添加新字段。<br />**runtime**：新字段作为运行时字段添加到索引中，这些字段没有索引，是_source 在查询时加载的。<br />**strict**：如果检测到新字段，则会抛出异常并拒绝文档。必须将新字段显式添加到映射中。<br /> |
-| eager_global_ordinals  | (ES8)用于聚合的字段上，优化聚合性能。例如：<br />![在这里插入图片描述](https://img-blog.csdnimg.cn/f1ba4244066048759a9293b461ec3fc0.jpeg#pic_center)<br /> |
-|                        | <br />                                                       |
-| enabled                | 是否创建倒排索引，可以对字段操作，也可以对索引操作，如果不创建索引，让然可以检索并在_source 元数据中展示，谨慎使用，该状态无法修改。<br />![在这里插入图片描述](https://img-blog.csdnimg.cn/dc4f2cf9631d41458fe5f2548597c4de.jpeg#pic_center)<br />如果是对某个字段指定,则字段类型必须为 object<br />![image](https://raw.githubusercontent.com/0RAJA/img/main/20230420012033-325-image-20230417203619-inkcebg.png)<br /> |
-| **fielddata** ★        | **查询时内存数据结构，在首次用当前字段聚合、排序或者在脚本中使用时，需要字段为 fielddata 数据结构，并且创建倒排索引保存到堆中** |
-| **fields** ★           | **给 field 创建多字段，用于不同目的（全文检索或者聚合分析排序）** |
-| **format** ★           | 用于格式化代码，日期类型,时间类型<br />![在这里插入图片描述](https://img-blog.csdnimg.cn/804ce8c65e0547248551068579b6d803.jpeg#pic_center)[在这里插入图片描述](https://img-blog.csdnimg.cn/804ce8c65e0547248551068579b6d803.jpeg#pic_center)<br /> |
-| **ignore_above** ★     | 超过长度将被忽略,不存储<br />![image](https://raw.githubusercontent.com/0RAJA/img/main/20230420012033-325-image-20230417210521-og0grvr.png) <br /> |
-| ignore_malformed       | 忽略类型错误                                                 |
-| index_options          | 控制将哪些信息添加到反向索引中以进行搜索和突出显示。仅用于 text 字段 |
-| index_phrases          | 提升 exact_value 查询速度，但是要消耗更多磁盘空间            |
-| index_prefixes         | 前缀搜索：min_chars：前缀最小长度，>0，默认 2（包含）max_chars：前缀最大长度，<20，默认 5（包含） |
-| **index** ★            | 是否对创建对当前字段创建倒排索引，默认 true，如果不创建索引，该字段不会通过索引被搜索到,<br />但是仍然会在 source 元数据中展示 true 新检测到的字段将添加到映射中。（默认）false 新检测到的字段将被忽略。这些字段将不会被索引，因此将无法搜索，但仍会出现在_source 返回的匹配项中。这些字段不会添加到映射中，必须显式添加新字段。strict 如果检测到新字段，则会引发异常并拒绝文档。必须将新字段显式添加到映射中<br /> |
-| **meta**               | 附加到元字段,可以用于处理相同索引的多个应用区分时使用,ES 查询数据时不可见 |
-| normalizer             | 文档归一化器(分词器的一部分)                                 |
-| **norms** ★            | **是否禁用评分（在 filter 和聚合字段上应该禁用）。不用做排序就可以禁用** |
-| **null_value** ★       | **为 null 值设置默认值**                                     |
-| position_increment_gap | 用于数组中相邻搜索中的搜索间隙，slop 默认 100 `见：代码块 1` |
-| properties ★           | 除了 mapping 还可用于 object 的属性设置                      |
-| **search_analyzer** ★  | **设置单独的查询时分析器**                                   |
-| **similarity**         | 为字段设置相关度算法，支持：<br />BM25<br />boolean<br />注意：**classic（TF-IDF）在 ES 8.x 中已不再支持！**<br /> |
-| subobjects             | ES 8 新增，subobjects 设置为 false 的字段的值，其子字段的值不被扩展为对象。 |
-| store                  | **开辟一块独立的字段存储区**                                 |
-| **term_vector**        | 运维参数，在运维篇会详细讲解。                               |
+|**参数名称**|**释义**|
+| ----------------------| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|**analyzer** ★|**指定分析器，只有 text 类型字段支持。**|
+|coerce|是否允许强制类型转换，支持对字段段度 设置或者对整个索引设置。<br />true： “1” => 1<br />false： “1” =< 1<br />索引级设置<br />![image](https://raw.githubusercontent.com/0RAJA/img/main/20230420012033-325-image-20230417202425-9djxgwi.png)<br />字段级设置<br />![image](https://raw.githubusercontent.com/0RAJA/img/main/20230420012033-325-image-20230417202210-g2ujfjs.png)<br />|
+|||
+|copy_to|该参数允许将多个字段的值复制到组字段中，然后可以将其作为单个字段进行查询<br /><br />|
+|**doc_values** ★|为了提升排序和聚合效率，默认 true，如果确定不需要对字段进行排序或聚合，也不需要通过脚本访问字段值，则可以禁用 doc 值以节省磁盘空间（不支持 text 和 annotated_text）在 `开源社区 ES 8.x:进阶篇 - 深入聚合原理` ​章节中会深入讲解|
+|dynamic ★|控制是否可以动态添加新字段<br />支持以下四个选项：<br />**true**：（默认）允许动态映射<br />**false**：忽略新字段。这些字段不会被索引或搜索，但仍会出现在_source 返回的命中字段中。这些字段不会添加到映射中，必须显式添加新字段。<br />**runtime**：新字段作为运行时字段添加到索引中，这些字段没有索引，是_source 在查询时加载的。<br />**strict**：如果检测到新字段，则会抛出异常并拒绝文档。必须将新字段显式添加到映射中。<br />|
+|eager_global_ordinals|(ES8)用于聚合的字段上，优化聚合性能。例如：<br />![在这里插入图片描述](https://img-blog.csdnimg.cn/f1ba4244066048759a9293b461ec3fc0.jpeg#pic_center)<br />|
+||<br />|
+|enabled|是否创建倒排索引，可以对字段操作，也可以对索引操作，如果不创建索引，让然可以检索并在_source 元数据中展示，谨慎使用，该状态无法修改。<br />![在这里插入图片描述](https://img-blog.csdnimg.cn/dc4f2cf9631d41458fe5f2548597c4de.jpeg#pic_center)<br />如果是对某个字段指定,则字段类型必须为 object<br />![image](https://raw.githubusercontent.com/0RAJA/img/main/20230420012033-325-image-20230417203619-inkcebg.png)<br />|
+|**fielddata** ★|**查询时内存数据结构，在首次用当前字段聚合、排序或者在脚本中使用时，需要字段为 fielddata 数据结构，并且创建倒排索引保存到堆中**|
+|**fields** ★|**给 field 创建多字段，用于不同目的（全文检索或者聚合分析排序）**|
+|**format** ★|用于格式化代码，日期类型,时间类型<br />![在这里插入图片描述](https://img-blog.csdnimg.cn/804ce8c65e0547248551068579b6d803.jpeg#pic_center)[在这里插入图片描述](https://img-blog.csdnimg.cn/804ce8c65e0547248551068579b6d803.jpeg#pic_center)<br />|
+|**ignore_above** ★|超过长度将被忽略,不存储<br />![image](https://raw.githubusercontent.com/0RAJA/img/main/20230420012033-325-image-20230417210521-og0grvr.png) <br />|
+|ignore_malformed|忽略类型错误|
+|index_options|控制将哪些信息添加到反向索引中以进行搜索和突出显示。仅用于 text 字段|
+|index_phrases|提升 exact_value 查询速度，但是要消耗更多磁盘空间|
+|index_prefixes|前缀搜索：min_chars：前缀最小长度，>0，默认 2（包含）max_chars：前缀最大长度，<20，默认 5（包含）|
+|**index** ★|是否对创建对当前字段创建倒排索引，默认 true，如果不创建索引，该字段不会通过索引被搜索到,<br />但是仍然会在 source 元数据中展示 true 新检测到的字段将添加到映射中。（默认）false 新检测到的字段将被忽略。这些字段将不会被索引，因此将无法搜索，但仍会出现在_source 返回的匹配项中。这些字段不会添加到映射中，必须显式添加新字段。strict 如果检测到新字段，则会引发异常并拒绝文档。必须将新字段显式添加到映射中<br />|
+|**meta**|附加到元字段,可以用于处理相同索引的多个应用区分时使用,ES 查询数据时不可见|
+|normalizer|文档归一化器(分词器的一部分)|
+|**norms** ★|**是否禁用评分（在 filter 和聚合字段上应该禁用）。不用做排序就可以禁用**|
+|**null_value** ★|**为 null 值设置默认值**|
+|position_increment_gap|用于数组中相邻搜索中的搜索间隙，slop 默认 100 `见：代码块 1`​|
+|properties ★|除了 mapping 还可用于 object 的属性设置|
+|**search_analyzer** ★|**设置单独的查询时分析器**|
+|**similarity**|为字段设置相关度算法，支持：<br />BM25<br />boolean<br />注意：**classic（TF-IDF）在 ES 8.x 中已不再支持！**<br />|
+|subobjects|ES 8 新增，subobjects 设置为 false 的字段的值，其子字段的值不被扩展为对象。|
+|store|**开辟一块独立的字段存储区**|
+|**term_vector**|运维参数，在运维篇会详细讲解。|
 
 ## Text 类型
 
@@ -1101,14 +1101,14 @@ POST /<index>/_update/<_id>
               }
             }
   ```
-* Text 类型的字段默认会被分词(`term`)
+* Text 类型的字段默认会被分词(`term`​)
 * ES 默认情况下会为 Text 类型创建倒排索引
 
 ## keyword 类型
 
-`keyword` 使用序号映射存储它们的文档值以获得更紧凑的表示
+`keyword` ​使用序号映射存储它们的文档值以获得更紧凑的表示
 
-> 注意 `ignore_above` 属性代表**忽略**而不是**截断**
+> 注意 `ignore_above` ​属性代表**忽略**而不是**截断**
 >
 > 例如:
 >
@@ -1119,9 +1119,9 @@ POST /<index>/_update/<_id>
 > }
 > ```
 >
-> 当你插入的数据超过 `ignore_above` 时,数据会被保存下来,但是无法通过 `query` 查询.
+> 当你插入的数据超过 `ignore_above` ​时,数据会被保存下来,但是无法通过 `query` ​查询.
 
-1. `keyword` 类型不会被分词: 精准查询
+1. `keyword` ​类型不会被分词: 精准查询
 2. 查询参数
 
    ```json
@@ -1136,9 +1136,9 @@ POST /<index>/_update/<_id>
      }
    ```
 
-   * `term` 精准查询和聚合字段: ID、电子邮件地址、主机名、状态代码、邮政编码或标签,包括范围查询
-   * `match` 全文检索
-3. `keyword` 类型超过阈值长度会直接被丢弃
+   * `term` ​精准查询和聚合字段: ID、电子邮件地址、主机名、状态代码、邮政编码或标签,包括范围查询
+   * `match` ​全文检索
+3. `keyword` ​类型超过阈值长度会直接被丢弃
 
 ## Date 类型
 
@@ -1176,7 +1176,7 @@ POST tax/_bulk
 {"date": "2021-11-1 12:20:00", "company": "国家电网", "ratal": 82950000}
 ```
 
-但是可以查看 `mapping` 发现其类型并非 `Date`
+但是可以查看 `mapping` ​发现其类型并非 `Date`​
 
 ```json
 "properties" : {
@@ -1194,7 +1194,7 @@ POST tax/_bulk
 
 ### 原理
 
-原因就在于对时间类型的格式的要求是绝对严格的。要求必须是一个标准的 UTC 时间类型。上述字段的数据格式如果想要使用，就必须使用 `yyyy-MM-ddTHH:mm:ssZ` 或 `yyyy-MM-dd` 格式（其中 T 个间隔符，Z 代表 0 时区），以下均为错误的时间格式（均无法被自动映射器识别为日期时间类型）：
+原因就在于对时间类型的格式的要求是绝对严格的。要求必须是一个标准的 UTC 时间类型。上述字段的数据格式如果想要使用，就必须使用 `yyyy-MM-ddTHH:mm:ssZ` ​或 `yyyy-MM-dd` ​格式（其中 T 个间隔符，Z 代表 0 时区），以下均为错误的时间格式（均无法被自动映射器识别为日期时间类型）：
 
 * yyyy-MM-dd HH:mm:ss
 * 时间戳
@@ -1251,7 +1251,7 @@ POST tax/_bulk
 
 ### 解决方法
 
-在字段属性中添加一个参数`"format":"yyyy-MM-dd HH:mm:ss||yyyy-MM-dd||epoch_millis"`可以避免因为数据给是不统一导致无法写入
+在字段属性中添加一个参数`"format":"yyyy-MM-dd HH:mm:ss||yyyy-MM-dd||epoch_millis"`​可以避免因为数据给是不统一导致无法写入
 
 ```json
 PUT tax
@@ -1279,7 +1279,7 @@ PUT tax
 
 1. 概念
 
-    **官方定义: **这个nested类型是object一种数据类型，允许对象数组以相互独立的方式进行索引
+    **官方定义: ​**这个nested类型是object一种数据类型，允许对象数组以相互独立的方式进行索引
 
     Es中用于复杂类型对象数组的索引操作,Es中没有内部对象的概念,因此Es在存储复杂类型的时候会把对象的复杂层次结果扁平化为为一个k-v键值对列表
 2. 适用场景
@@ -1288,7 +1288,7 @@ PUT tax
 
 ### 不使用Nested复杂数据结构时的问题
 
-1. 插入数据,其中`goods_list`的类型是数组的第一个元素的类型,即`object`复杂数据类型
+1. 插入数据,其中`goods_list`​的类型是数组的第一个元素的类型,即`object`​复杂数据类型
 
     ```json
     PUT /order/_doc/1
@@ -1359,7 +1359,7 @@ PUT tax
             }
     }
     ```
-3. 尝试搜索不存在结果的条件: 同时满足`name`和`price`的数据并不存在
+3. 尝试搜索不存在结果的条件: 同时满足`name`​和`price`​的数据并不存在
 
     ```json
     GET order/_search
@@ -1445,7 +1445,7 @@ PUT tax
 
 ### 使用Nested类型
 
-上述问题解决办法即对复杂类型使用Nested类型(嵌套类型不仅为`Nested`一种)
+上述问题解决办法即对复杂类型使用Nested类型(嵌套类型不仅为`Nested`​一种)
 
 1. 手动指定Mapping中Nested类型
 
@@ -1500,5 +1500,3 @@ PUT tax
     ```
 
 ## 自动映射模板 Dynamic Templates
-
-‍
