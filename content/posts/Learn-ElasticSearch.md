@@ -1500,3 +1500,165 @@ PUT tax
     ```
 
 ## 自动映射模板 Dynamic Templates
+
+为一类相同或相似的字段定义相同的映射
+
+### 定义映射模板
+
+```json
+"dynamic_templates":[
+  {
+    "my_template_name": {
+      // ...匹配条件
+      "mapping":{
+        // 相同的映射
+      }
+    }
+  }
+]
+```
+
+### 规则判定: conditions
+
+#### match_mapping_type 匹配数据类型
+
+1. 创建模板
+
+   ```json
+   PUT test_template
+   {
+       "mappings": {
+           "dynamic_templates": [
+               {
+                   "integers": { // 模板名称
+                       "match_mapping_type": "long", // 匹配的数据类型
+                       "mapping": {
+                           "type": "integer" // 映射为integer
+                       }
+                   }
+               },
+               {
+                   "strings": {
+                       "match_mapping_type": "string",
+                       "mapping": {
+                           "type": "keyword"
+                       }
+                   }
+               }
+           ]
+       }
+   }
+   ```
+
+2. 插入数据
+
+   ```json
+   PUT test_template/_doc/1
+   {
+     "my_integer": 1000,
+     "my_string": "hello"
+   }
+   ```
+
+3. 查看mapping发现使用了模板进行更改
+
+   ```json
+   "properties": {
+       "my_integer": {
+           "type": "integer"
+       },
+       "my_string": {
+           "type": "keyword"
+       }
+   }
+   ```
+
+#### match,unmatch 匹配字段名称规则
+
+> 必须满足所有规则
+
+1. 创建模板
+
+   ```json
+   PUT test_template3/_doc/1
+   {
+     "mappings": {
+       "dynamic_templates": [
+         {
+           "my_template": {
+             "match_mapping_type": "long",
+             "match": "num_*", // 字段名称必须匹配
+             "unmatch": "*_text", // 字段名称不匹配
+             "mapping": {
+               "type": "integer"
+             }
+           }
+         }
+       ]
+     }
+   ```
+
+#### path_match,path_unmatch 嵌套字段
+
+```json
+PUT test_template4
+{
+  "mappings": {
+    "dynamic_templates": [
+      {
+        "full_name": {
+          "path_match": "name.*", // 路径中父节点名称为name
+          "path_unmatch": "*.middle", // 根节点名称为middle
+          "mapping": {
+            "type": "text", // 注意此类型只作用于匹配的类型,copy_to
+            "copy_to": "full_name"
+          }
+        }
+      }
+    ]
+  }
+}
+```
+
+插入数据
+
+```json
+PUT test_template4/_doc/1
+{
+  "name": {
+    "first": "elastic",
+    "middle": "org",
+    "last": "cn"
+  }
+}
+```
+
+### 模板变量
+
+```json
+{
+    "mappings": {
+        "dynamic_templates": [
+            {
+                "named_analyzers": {
+                    "match_mapping_type": "string",
+                    "match": "*",
+                    "mapping": {
+                        "type": "text",
+                        "analyse": "{name}" // 分词器名和变量名相同
+                    }
+                }
+            },
+            {
+                "no_doc_values": {
+                    "match_mapping_type": "*",
+                    "mapping": {
+                        "type": "{dynamic_type}", // 所有非文本类型都
+                        "doc_values": false
+                    }
+                }
+            }
+        ]
+    }
+}
+```
