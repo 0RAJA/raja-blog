@@ -14,7 +14,7 @@ jobs:
       - name: build
         run: |
           git submodule update --init --recursive
-          curl -L https://github.com/gohugoio/hugo/releases/download/v0.111.3/hugo_0.111.3_Linux-64bit.tar.gz | tar xvz
+          curl -L https://github.com/gohugoio/hugo/releases/download/v0.111.3/hugo_extended_0.111.3_Linux-64bit.tar.gz | tar xvz
           sudo mv hugo /usr/bin/hugo
           hugo
 
