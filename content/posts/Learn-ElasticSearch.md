@@ -1662,3 +1662,262 @@ PUT test_template4/_doc/1
     }
 }
 ```
+
+# 分词器
+
+## 分词器认知基础
+
+### 基本概念
+
+分词器即文本分析器,按照预先的分词规则,将原始文档分割为若干更小粒度的词项(term),粒度大小取决于分词器规则
+
+### 发生时期
+
+1. 倒排索引的创建时期: 对句子进行分词来创建倒排索引
+2. 搜索时期: 将搜索句子进行分词然后在倒排索引中匹配
+
+### 分词器的组成
+
+1. 切词器: 定义分词器的切词规则
+2. 词项过滤器: 对词项的结果进行处理
+3. 字符过滤器: 处理文档中单个字符
+
+```json
+PUT test_analyer
+{
+  "settings": {
+    "analysis": {
+      "char_filter": {}, // 字符过滤器
+      "filter": {}, // 词项过滤器
+      "tokenizer": {} // 切词器
+    }
+  }
+}
+```
+
+> 分词器仅仅对倒排索引进行操作,不会影响原数据
+
+## 文档归一化处理
+
+### 意义
+
+将一些词项转换为统一的词来去除差异性
+
+> 切词 -> 规范化 -> 去重 -> 字典序
+
+1. 大小写
+2. 语气词
+3. 同义词
+
+### _analyzer API
+
+查看分词结果
+
+```json
+GET _analyze
+{
+  "text": ["What are you doing"],
+  "analyzer": "english"
+}
+{
+  "tokens" : [
+    {
+      "token" : "what", // 大小写统一
+      "start_offset" : 0,
+      "end_offset" : 4,
+      "type" : "<ALPHANUM>",
+      "position" : 0
+    },
+    {
+      "token" : "you", 
+      "start_offset" : 9,
+      "end_offset" : 12,
+      "type" : "<ALPHANUM>",
+      "position" : 2
+    },
+    {
+      "token" : "do", // 时态
+      "start_offset" : 13,
+      "end_offset" : 18,
+      "type" : "<ALPHANUM>",
+      "position" : 3
+    }
+  ]
+}
+```
+
+## 切词器
+
+默认的切词器是standard,根据空格切词
+
+```json
+GET _analyze
+{
+  "text": ["What are you doing"],
+  "tokenizer": "standard"
+}
+{
+  "tokens" : [
+    {
+      "token" : "What",
+      "start_offset" : 0,
+      "end_offset" : 4,
+      "type" : "<ALPHANUM>",
+      "position" : 0
+    },
+    {
+      "token" : "are",
+      "start_offset" : 5,
+      "end_offset" : 8,
+      "type" : "<ALPHANUM>",
+      "position" : 1
+    },
+    {
+      "token" : "you",
+      "start_offset" : 9,
+      "end_offset" : 12,
+      "type" : "<ALPHANUM>",
+      "position" : 2
+    },
+    {
+      "token" : "doing",
+      "start_offset" : 13,
+      "end_offset" : 18,
+      "type" : "<ALPHANUM>",
+      "position" : 3
+    }
+  ]
+}
+```
+
+## 词项过滤器
+
+在切词后对词项进行处理,如大小写转化,同义词转换等等.
+
+### 大小写转换
+
+```json
+GET _analyze
+{
+  "text": [
+    "What are you doing",
+    "What.are.You.Dioing"
+  ],
+  "tokenizer": "standard",
+  "filter": [
+    "lowercase"  // uppercase
+  ]
+}
+```
+
+### 停用词
+
+切词完成之后，会被干掉词项，即停用词.
+
+```json
+GET _analyze
+{
+  "text": [
+    "What are you doing",
+    "What.are.You.Dioing"
+  ],
+  "tokenizer": "standard",
+  "filter": [
+    "stop"
+  ]
+}
+```
+
+支持自定义词项过滤器
+
+```json
+PUT test_token_filter_stop
+{
+  "settings": {
+    "analysis": {
+      "filter": {
+        "my_filter": { // 自定义过滤器名称
+          "type": "stop", // 停顿词类型
+          "stopwords": [ // 自定义词语
+            "www"
+          ],
+          "ignore_case": true // 忽略大小写
+        }
+      }
+    }
+  }
+}
+
+GET test_token_filter_stop/_analyze
+{
+  "tokenizer": "standard",
+  "filter": [
+    "my_filter"
+  ],
+  "text": [
+    "www WWW are you doing"
+  ]
+}
+```
+
+### 同义词
+
+同义词定义规则
+
+- a, b, c => d：这种方式，a、b、c 会被 d 代替。
+- a, b, c, d：这种方式下，a、b、c、d 是等价的,仍然是a,b,c,d
+
+```json
+// 定义
+PUT test_token_filter_synonym
+{
+  "settings": {
+    "analysis": {
+      "filter": {
+        "my_filter": {
+          "type": "synonym",
+          "synonyms": [
+            "a,b,c => d"
+          ]
+        }
+      }
+    }
+  }
+} 
+
+//查询
+GET test_token_filter_synonym/_analyze
+{
+  "tokenizer": "standard",
+  "filter": [
+    "my_filter"
+  ],
+  "text": [
+    "a b c d"
+  ]
+}
+```
+
+上述内联写法的缺点就是无法更改,可以采用文件的形式进行配置,以config为根路径
+
+```json
+PUT test_token_filter_synonym
+{
+  "settings": {
+    "analysis": {
+      "filter": {
+        "my_synonym": {
+          "type": "synonym",
+          "synonyms_path": "analysis/synonym.txt"
+        }
+      }
+    }
+  }
+}
+GET test_token_filter_synonym/_analyze
+{
+  "tokenizer": "standard", 
+  "text": ["a"], // a b c d s; q w e r ss
+  "filter": ["my_synonym"]
+}
+```
