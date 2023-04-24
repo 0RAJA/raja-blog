@@ -1921,3 +1921,392 @@ GET test_token_filter_synonym/_analyze
   "filter": ["my_synonym"]
 }
 ```
+
+## 字符过滤器
+
+在分词之前过滤无用字符
+
+### 用法
+
+```json
+PUT test_char_filter
+{
+  "settings": {
+    "analysis": {
+      "char_filter": {
+        "my_char_filter":{
+          "type":"<char_filter_type>"
+        }
+      }
+    }
+  }
+}
+```
+
+### 官方支持的三种类型
+
+#### html_strip: 过滤指定HTML标签
+
+```json
+PUT test_char_filter
+{
+  "settings": {
+    "analysis": {
+      "char_filter": {
+        "my_char_filter": {
+          "type": "html_strip",
+          "escaped_tags": [
+            "a"
+          ]
+        }
+      }
+    }
+  }
+}
+
+GET test_char_filter/_analyze
+{
+  "tokenizer": "standard", // 指定分词器
+  "char_filter": [
+    "my_char_filter" // 指定字符过滤器
+  ],
+  "text": [
+    "<p>I&nbsp;am from China<a/></p>"
+  ]
+}
+```
+
+先通过字符过滤器过滤字符后再根据分词器切分为词项
+
+结果:
+
+```json
+{
+  "tokens" : [
+    {
+      "token" : "I",
+      "start_offset" : 3,
+      "end_offset" : 4,
+      "type" : "<ALPHANUM>",
+      "position" : 0
+    },
+    {
+      "token" : "am",
+      "start_offset" : 10,
+      "end_offset" : 12,
+      "type" : "<ALPHANUM>",
+      "position" : 1
+    },
+    {
+      "token" : "from",
+      "start_offset" : 13,
+      "end_offset" : 17,
+      "type" : "<ALPHANUM>",
+      "position" : 2
+    },
+    {
+      "token" : "China",
+      "start_offset" : 18,
+      "end_offset" : 23,
+      "type" : "<ALPHANUM>",
+      "position" : 3
+    },
+    {
+      "token" : "a",
+      "start_offset" : 24,
+      "end_offset" : 25,
+      "type" : "<ALPHANUM>",
+      "position" : 4
+    }
+  ]
+}
+```
+
+#### mapping:字符替换
+
+```json
+PUT test_char_filter
+{
+  "settings": {
+    "analysis": {
+      "char_filter": {
+        "my_char_filter": {
+          "type": "mapping",
+          "mappings": [ // 替换规则
+            "a => *",
+            "b => *",
+            "c => *"
+          ]
+        }
+      }
+    }
+  }
+}
+
+GET test_char_filter/_analyze
+{
+  "char_filter": [
+    "my_char_filter"
+  ],
+  "text": [
+    "abcddac"
+  ]
+}
+```
+
+词语被映射(注意:standard会干掉停用词)
+
+```json
+GET test_char_filter/_analyze
+{
+  // "tokenizer": "standard",
+  "char_filter": [
+    "my_char_filter"
+  ],
+  "text": [
+    "abcddac"
+  ]
+}
+```
+
+#### pattern_replace: 正则表达式
+
+```json
+PUT test_char_filter
+{
+  "settings": {
+    "analysis": {
+      "char_filter": {
+        "my_char_filter": {
+          "type": "pattern_replace",
+          "pattern": """(\d{3})\d{4}(\d{3})""", // 正则匹配
+          "replacement": "$1****$2" // 分组替换
+        }
+      }
+    }
+  }
+}
+
+GET test_char_filter/_analyze
+{
+  "char_filter": [
+    "my_char_filter"
+  ],
+  "text": [
+    "14315554133"
+  ]
+}
+```
+
+结果
+
+```json
+{
+  "tokens" : [
+    {
+      "token" : "143****4133",
+      "start_offset" : 0,
+      "end_offset" : 11,
+      "type" : "word",
+      "position" : 0
+    }
+  ]
+}
+```
+
+## 内置分词器
+
+- Standard ★：默认分词器，中文支持的不理想，会逐字拆分。参数值为：standard
+- Pattern：以正则匹配分隔符，把文本拆分成若干词项。参数值为：pattern
+- Simple：除了英文单词和字母，其他统统过滤掉，参数值为：simple
+- Whitespace ★：以空白符分隔，不会改变大小写，参数值为：whitespace
+- Keyword ★：可以理解为不做任何操作的分词器，会保留原有文本的所有属性，参数值为：keyword
+- Stop：分词规则和 Simple Analyzer 相同，但是增加了对停用词的支持。参数值为：stop
+- [Language Analyzer](https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-lang-analyzer.html)：支持全球三十多种主流语言。
+- Fingerprint：一种特殊领域分词器，不常用
+
+## 自定义分词器
+
+### 规则
+
+可以组合切词器,词项过滤器,字符过滤器来自定义分词器
+
+字符过滤器 -> 切词器 -> 词项过滤器
+
+- Tokenizer切词器: 必须包含一个
+- Token Filter词项过滤器: 可以不指定或者指定多个
+- Char Filter 字符过滤器: 可以不指定,也可以指定多个
+
+### 使用样例
+
+#### 自定义分词器
+
+```json
+PUT test_analyser // 必须依赖索引使用
+{
+  "settings": {
+    "analysis": {
+      "tokenizer": { // 定义切词器
+        "my_tokenizer": {
+          "type": "pattern", // 匹配指定模式的词来切
+          "pattern": [
+            ",.!?"
+          ]
+        }
+      },
+      "char_filter": { // 定义字符过滤器
+        "my_mapping": { 
+          "type": "mapping", // mapping映射器
+          "mappings": [
+            "c => *"
+          ]
+        },
+        "my_char": {
+          "type": "html_strip", // html过滤器
+          "escaped_tags": [
+            "a"
+          ]
+        }
+      },
+      "filter": { // 词项过滤器
+        "my_filter": { 
+          "type": "stop", // 停顿词过滤器
+          "stopwords": [
+            "www"
+          ],
+          "ignore_case": true // 忽略大小写
+        }
+      },
+      "analyzer": { // 组装自定义分词器
+        "my_analyzer": {
+          "type": "custom", // 告知ES使用自定义过滤器(可省略)
+          "tokenizer": "my_tokenizer", // 选择切词器
+          "char_filter": [ // 选择字符过滤器
+            "my_char",
+            "my_mapping"
+          ],
+          "filter": [ // 选择词项过滤器
+            "my_filter",
+            "lowercase"
+          ]
+        }
+      }
+    }
+  }
+}
+```
+
+#### 设置指定字段使用分词器
+
+```json
+PUT test_analyser/_mapping
+{
+  "properties": {
+    "title": {
+      "type": "text",
+      "analyzer": "my_analyzer"
+    }
+  }
+}
+```
+
+#### 插入数据
+
+```json
+PUT test_analyser/_doc/1
+{
+  "title":"i am from China!How are you.www.baidu.com,<a>hello</a><p>Ok</p>"
+}
+```
+
+#### 查询数据
+
+```json
+GET test_analyser/_search
+{
+  "query": {
+    "match": {
+      "title": "baidu"
+    }
+  }
+}
+```
+
+> 分词结果
+>
+> ```json
+> {
+>   "tokens" : [
+>     {
+>       "token" : "i am from china",
+>       "start_offset" : 0,
+>       "end_offset" : 15,
+>       "type" : "word",
+>       "position" : 0
+>     },
+>     {
+>       "token" : "how are you",
+>       "start_offset" : 16,
+>       "end_offset" : 27,
+>       "type" : "word",
+>       "position" : 1
+>     },
+>     {
+>       "token" : "baidu",
+>       "start_offset" : 32,
+>       "end_offset" : 37,
+>       "type" : "word",
+>       "position" : 3
+>     },
+>     {
+>       "token" : "*om",
+>       "start_offset" : 38,
+>       "end_offset" : 41,
+>       "type" : "word",
+>       "position" : 4
+>     },
+>     {
+>       "token" : """<a>hello</a>
+> ok
+> """,
+>       "start_offset" : 42,
+>       "end_offset" : 63,
+>       "type" : "word",
+>       "position" : 5
+>     }
+>   ]
+> }
+> ```
+
+#### 输出结果
+
+```json
+{
+  "took" : 1,
+  "timed_out" : false,
+  "_shards" : {
+    "total" : 1,
+    "successful" : 1,
+    "skipped" : 0,
+    "failed" : 0
+  },
+  "hits" : {
+    "total" : {
+      "value" : 1,
+      "relation" : "eq"
+    },
+    "max_score" : 0.2876821,
+    "hits" : [
+      {
+        "_index" : "test_analyser",
+        "_type" : "_doc",
+        "_id" : "1",
+        "_score" : 0.2876821,
+        "_source" : {
+          "title" : "i am from China!How are you.www.baidu.com,<a>hello</a><p>Ok</p>"
+        }
+      }
+    ]
+  }
+}
+```
