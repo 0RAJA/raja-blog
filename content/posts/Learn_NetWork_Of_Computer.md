@@ -4,8 +4,8 @@ subtitle: "计算机网络学习" # 副标题
 description: "计算机网路总结,来自小林coding" # 文章内容描述
 date: 2023-04-26T00:05:23+08:00 # 时间
 lastmod: 2023-04-26T00:05:23+08:00 # 上次修改时间
-tags: ["计网"] # 标签
-categories: ["计网","总结"] # 分类
+tags: ["计网","总结"] # 标签
+categories: ["计网"] # 分类
 featuredImagePreview: "https://raw.githubusercontent.com/0RAJA/img/main/20230426000844-071-1652169609_225303.jpg" # 封面链接
 draft: false # 是否为草稿
 hiddenFromHomePage: false # 私人

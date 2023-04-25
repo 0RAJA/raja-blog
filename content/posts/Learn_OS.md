@@ -4,8 +4,8 @@ subtitle: "操作系统学习" # 副标题
 description: "操作系统学习总结" # 文章内容描述
 date: 2023-04-26T00:12:34+08:00 # 时间
 lastmod: 2023-04-26T00:12:34+08:00 # 上次修改时间
-tags: ["操作系统"] # 标签
-categories: ["操作系统","总结"] # 分类
+tags: ["操作系统","总结"] # 标签
+categories: ["操作系统"] # 分类
 featuredImagePreview: "https://raw.githubusercontent.com/0RAJA/img/main/20230426001352-757-%E5%AD%98%E5%82%A8%E5%99%A8%E7%9A%84%E5%B1%82%E6%AC%A1%E5%85%B3%E7%B3%BB%E5%9B%BE.png" # 封面链接
 draft: false # 是否为草稿
 hiddenFromHomePage: false # 私人
