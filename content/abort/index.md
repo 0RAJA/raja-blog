@@ -10,4 +10,4 @@ featuredImagePreview: "" # 封面链接
 draft: false # 是否为草稿
 hiddenFromHomePage: false # 私人
 ---
-I am Raja from XUPT-STA.
+或许是不知梦的缘故,流离之人追逐幻影.
