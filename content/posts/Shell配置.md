@@ -36,7 +36,7 @@ hiddenFromHomePage: false # 私人
 
 安装后通过 `p10k configure` ​配置即可
 
-![image](https:/raja-img.oss-cn-hangzhou.aliyuncs.com/img/202309241253679.png))
+![image](https:/raja-img.oss-cn-hangzhou.aliyuncs.com/img/202309241253679.png)
 
 ## 配置
 
