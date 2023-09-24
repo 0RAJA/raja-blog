@@ -36,7 +36,7 @@ hiddenFromHomePage: false # 私人
 
 安装后通过 `p10k configure` ​配置即可
 
-![image](https:/raja-img.oss-cn-hangzhou.aliyuncs.com/img/202309241253679.png)
+![](https://raw.githubusercontent.com/0RAJA/img/main/202309241306227.png)
 
 ## 配置
 
@@ -169,6 +169,4 @@ alias tzh="trans :zh -b"
 alias ten="trans :en -show-languages=n -show-prompt-message=n -show-alternatives=n"
 ```
 
-![image](https://raja-img.oss-cn-hangzhou.aliyuncs.com/img/202309241253147.png)
-
-‍
+![](https://raw.githubusercontent.com/0RAJA/img/main/202309241305175.png)‍
