@@ -8,10 +8,9 @@ toc: true
 tags:
   - mac
   - 迁移
-  - Intel
 categories:
   - 总结
-keywords: mac,迁移,Intel
+keywords: mac,迁移
 description: Mac从Intel迁移到Apple芯片后的软件变更
 isCJKLanguage: true
 ---
