@@ -1,7 +1,5 @@
 ---
 title: Mac从Intel迁移到Apple芯片
-slug: move-from-intel-to-apple-chip-1q4are
-url: /post/move-from-intel-to-apple-chip-1q4are.html
 date: '2023-11-17 22:46:23'
 lastmod: '2023-11-18 17:08:11'
 toc: true
