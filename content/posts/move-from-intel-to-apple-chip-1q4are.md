@@ -13,7 +13,6 @@ categories:
 keywords: mac,迁移,Intel
 description: Mac从Intel迁移到Apple芯片后的软件变更
 isCJKLanguage: true
-slug: move-from-intel-to-apple-chip-1q4are
 ---
 
 # Mac从Intel迁移到Apple芯片
