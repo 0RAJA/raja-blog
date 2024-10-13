@@ -1,3 +1,17 @@
+---
+title: pycharm 不正确提示依赖包导入项
+slug: pycharm-incorrect-prompts-to-depend-on-package-guidance-z4smyf
+date: '2024-10-13 13:38:01+08:00'
+lastmod: '2024-10-13 13:54:36+08:00'
+tags:
+  - pycharm
+  - python
+categories:
+  - 技术
+keywords: pycharm,python
+description: pycharm 不正确提示依赖包导入项
+isCJKLanguage: true
+---
 
 # pycharm 不正确提示依赖包导入项
 
