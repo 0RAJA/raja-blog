@@ -1,19 +1,3 @@
----
-title: python pdm 使用
-slug: python-pdm-use-z1qpqxo
-url: /post/python-pdm-use-z1qpqxo.html
-date: '2024-10-13 13:00:11+08:00'
-lastmod: '2024-10-13 15:55:35+08:00'
-toc: true
-tags:
-  - python
-  - pdm
-categories:
-  - 技术
-keywords: python,pdm
-description: python pdm 使用
-isCJKLanguage: true
----
 
 # python pdm 使用
 
