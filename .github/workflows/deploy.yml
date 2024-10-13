@@ -25,4 +25,4 @@ jobs:
           APPLICATION_ID: ${{ secrets.APPLICATION_ID }}
           # needs to be inside $GITHUB_WORKSPACE from actions/checkout step
           FILE_PATH: public/index.json
-          INDEX_NAME: index
+          INDEX_NAME: raja-blog
