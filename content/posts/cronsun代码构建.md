@@ -6,7 +6,6 @@ date: 2024-04-16T11:45:28+08:00 # 时间
 lastmod: 2024-04-16T11:45:28+08:00 # 上次修改时间
 tags: ["go","vue"] # 标签
 categories: ["技术"] # 分类
-featuredImagePreview: "https://files.catbox.moe/gflusf.png" # 封面链接
 draft: false # 是否为草稿
 hiddenFromHomePage: false # 私人
 
@@ -19,14 +18,14 @@ hiddenFromHomePage: false # 私人
 cronsun 前端采用 vue 编写，打包后转为 go 静态代码并被一起编译为二进制包。代码目录为 cronsun/web/ui​。但由于依赖库版本等问题需要修改部分构建代码。
 
 1. 新增 cronsun/web/ui/copy-files.js​
-   
+
    ```js
    const fs = require('fs');
    fs.copyFileSync('index.html', './dist/index.html');
    ```
 
 2. 修改 cronsun/web/ui/package.json​
-   
+
    ```json
    {
     "name": "cronsun-web-ui",
@@ -66,7 +65,7 @@ cronsun 前端采用 vue 编写，打包后转为 go 静态代码并被一起编
    ```
 
 3. 修改 cronsun/web/ui/webpack.config.js​
-   
+
    ```js
    var path = require('path')
    var webpack = require('webpack')
@@ -155,9 +154,9 @@ cronsun 前端采用 vue 编写，打包后转为 go 静态代码并被一起编
    ```
 
 4. node 版本为 14.21.3​ (可以采用 nvm 进行管理)
-   
+
    mac M 芯片此版本安装需要 rosetta [在 Apple Silicon M1/M2 Mac 电脑上安装 Rosetta 2 运行 intel 应用](https://macoshome.com/course/6879.html)
-   
+
    ```shell
    > cronsun/web/ui
    npm install semantic-ui --ignore-scripts
@@ -166,17 +165,17 @@ cronsun 前端采用 vue 编写，打包后转为 go 静态代码并被一起编
    ```
 
 5. 通过脚本将前端代码转为 go 静态文件
-   
+
    ```shell
    > cronsun/web
    sh gen_bindata.sh
    ```
 
 6. 构建 go 二进制文件
-   
+
    ```shell
    > cronsun
    sh build.sh
    ```
-   
+
    生成的二进制文件就在 cronsun/dist​ ​下
