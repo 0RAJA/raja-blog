@@ -271,8 +271,11 @@ highlightTag = "em"
 absoluteURL = false
 [params.search.algolia]
 index = "raja-blog"
-appID = "IOOMILZOV0"
-searchKey = "fb0fb8983e485d5752843aa8ddbf25be"
+# 通过环境变量注入：
+# HUGO_PARAMS_SEARCH_ALGOLIA_APPID
+# HUGO_PARAMS_SEARCH_ALGOLIA_SEARCHKEY
+appID = ""
+searchKey = ""
 
 # 主页配置
 [params.home]

@@ -123,5 +123,14 @@ hugo new posts/<slug>.md
 
 部署相关密钥通过 GitHub Secrets 注入：
 
-- `ADMIN_API_KEY`
-- `APPLICATION_ID`
+- `ALGOLIA_APPLICATION_ID`
+- `ALGOLIA_SEARCH_API_KEY`
+- `ALGOLIA_ADMIN_API_KEY`
+
+本地如需验证 Algolia 搜索配置，可在运行 Hugo 前注入公开查询配置：
+
+```bash
+export HUGO_PARAMS_SEARCH_ALGOLIA_APPID="your-application-id"
+export HUGO_PARAMS_SEARCH_ALGOLIA_SEARCHKEY="your-search-api-key"
+make server
+```

@@ -1,9 +1,9 @@
 {
-  "compilerOptions": {
-    "paths": {
-      "*": [
-        "../themes/DoIt/assets/*"
-      ]
-    }
+ "compilerOptions": {
+  "paths": {
+   "*": [
+    "../themes/DoIt/assets/*"
+   ]
   }
+ }
 }

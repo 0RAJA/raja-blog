@@ -20,13 +20,16 @@ jobs:
           extended: true
 
       - name: build
+        env:
+          HUGO_PARAMS_SEARCH_ALGOLIA_APPID: ${{ secrets.ALGOLIA_APPLICATION_ID || secrets.APPLICATION_ID }}
+          HUGO_PARAMS_SEARCH_ALGOLIA_SEARCHKEY: ${{ secrets.ALGOLIA_SEARCH_API_KEY }}
         run: hugo
 
       - name: push index
         uses: 0RAJA/algolia-docsearch-upload-action@v1.2.2
         with:
-          ADMIN_API_KEY: ${{ secrets.ADMIN_API_KEY }}
-          APPLICATION_ID: ${{ secrets.APPLICATION_ID }}
+          ADMIN_API_KEY: ${{ secrets.ALGOLIA_ADMIN_API_KEY || secrets.ADMIN_API_KEY }}
+          APPLICATION_ID: ${{ secrets.ALGOLIA_APPLICATION_ID || secrets.APPLICATION_ID }}
           # needs to be inside $GITHUB_WORKSPACE from actions/checkout step
           FILE_PATH: public/index.json
           INDEX_NAME: raja-blog
