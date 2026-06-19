@@ -118,14 +118,18 @@ hugo new posts/<slug>.md
 
 1. 拉取仓库和子模块
 2. 安装 Hugo Extended `0.163.3`
-3. 执行 `hugo`
-4. 上传 `public/index.json` 到 Algolia 索引 `raja-blog`
+3. 安装固定版本的 Netlify CLI
+4. 执行 `hugo`
+5. 部署 `public/` 到 Netlify
+6. 上传 `public/index.json` 到 Algolia 索引 `raja-blog`
 
 部署相关密钥通过 GitHub Secrets 注入：
 
 - `ALGOLIA_APPLICATION_ID`
 - `ALGOLIA_SEARCH_API_KEY`
 - `ALGOLIA_ADMIN_API_KEY`
+- `NETLIFY_SITE_ID`
+- `NETLIFY_AUTH_TOKEN`
 
 本地如需验证 Algolia 搜索配置，可在运行 Hugo 前注入公开查询配置：
 

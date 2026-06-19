@@ -20,11 +20,26 @@ jobs:
           hugo-version: '0.163.3'
           extended: true
 
+      - name: setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+
+      - name: install deploy dependencies
+        run: npm ci
+
       - name: build
         env:
           HUGO_PARAMS_SEARCH_ALGOLIA_APPID: ${{ secrets.ALGOLIA_APPLICATION_ID || secrets.APPLICATION_ID }}
           HUGO_PARAMS_SEARCH_ALGOLIA_SEARCHKEY: ${{ secrets.ALGOLIA_SEARCH_API_KEY }}
         run: hugo
+
+      - name: deploy site
+        run: npx netlify deploy --prod --dir=public
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
 
       - name: push index
         uses: 0RAJA/algolia-docsearch-upload-action@v1.2.2
