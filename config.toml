@@ -175,6 +175,12 @@ images = ["/images/avatar.png"]
 # 开启 PWA 支持
 enablePWA = true
 
+[params.author]
+name = "raja"
+email = "rajawwang@foxmail.com"
+link = "https://github.com/0RAJA"
+avatar = "/images/avatar.png"
+
 # 页面头部导航栏配置
 [params.header]
 # 桌面端导航栏模式 ["fixed", "normal", "auto"]
@@ -333,10 +339,10 @@ lightgallery = false
 ruby = true
 #  是否使用 fraction 扩展语法
 fraction = true
-# 是否在文章页面显示原始 Markdown 文档链接
-linkToMarkdown = true
+# 是否在文章页面显示 Hugo 生成的 Markdown 文档链接
+linkToMarkdown = false
 # DoIt 新增 | 0.2.14 配置文章原始文件的链接
-linkToSource = true
+linkToSource = "https://github.com/0RAJA/raja-blog/blob/master/content/{path}"
 # "https://github.com/user/repo/blob/main/{path}"
 # DoIt 新增 | 0.2.13 配置编辑文章的链接
 linkToEdit = false
