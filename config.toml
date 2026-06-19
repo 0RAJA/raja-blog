@@ -8,13 +8,11 @@ title = "Raja's Blog"
 
 # [en, zh-cn, fr, ...] 设置默认的语言
 defaultContentLanguage = "zh-cn"
-# 网站语言, 仅在这里 CN 大写 ["en", "zh-CN", "fr", "pl", ...]
-languageCode = "zh-CN"
+# 网站区域设置, 仅在这里 CN 大写 ["en", "zh-CN", "fr", "pl", ...]
+locale = "zh-CN"
 # 是否包括中日韩文字
 hasCJKLanguage = true
 
-# 默认每页列表显示的文章数目
-paginate = 12
 # 谷歌分析代号 [UA-XXXXXXXX-X]
 googleAnalytics = ""
 # 版权描述，仅仅用于 SEO
@@ -127,10 +125,14 @@ changefreq = "weekly"
 filename = "sitemap.xml"
 priority = 0.5
 
+# 默认每页列表显示的文章数目
+[pagination]
+pagerSize = 12
+
 # Permalinks 配置
-[Permalinks]
-# posts = ":year/:month/:filename"
-posts = ":filename"
+[permalinks]
+# posts = ":year/:month/:contentbasename"
+posts = ":contentbasename"
 
 # 用于输出 Markdown 格式文档的设置
 [mediaTypes]
@@ -149,7 +151,6 @@ home = ["HTML", "RSS", "JSON"]
 page = ["HTML", "MarkDown"]
 section = ["HTML", "RSS"]
 taxonomy = ["HTML", "RSS"]
-taxonomyTerm = ["HTML"]
 
 [params]
 # DoIt 主题版本
@@ -269,7 +270,7 @@ highlightTag = "em"
 # LoveIt 新增 | 0.2.4 是否在搜索索引中使用基于 baseURL 的绝对路径
 absoluteURL = false
 [params.search.algolia]
-index = "index"
+index = "raja-blog"
 appID = "IOOMILZOV0"
 searchKey = "fb0fb8983e485d5752843aa8ddbf25be"
 
@@ -299,6 +300,10 @@ disclaimer = ""
 enable = true
 # 主页每页显示文章数量
 paginate = 8
+# 是否显示主页文章摘要
+summary = true
+# 主页文章摘要最大字符数
+summaryMaxLength = 120
 # 被 params.page 中的 hiddenFromHomePage 替代
 # 当你没有在文章前置参数中设置 "hiddenFromHomePage" 时的默认行为
 defaultHiddenFromHomePage = false
@@ -325,8 +330,6 @@ lightgallery = false
 ruby = true
 #  是否使用 fraction 扩展语法
 fraction = true
-#  是否使用 fontawesome 扩展语法
-fontawesome = true
 # 是否在文章页面显示原始 Markdown 文档链接
 linkToMarkdown = true
 # DoIt 新增 | 0.2.14 配置文章原始文件的链接

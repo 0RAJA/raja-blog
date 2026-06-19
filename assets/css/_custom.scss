@@ -1,0 +1,23 @@
+.header-title img {
+  width: 2rem;
+  height: 2rem;
+  max-width: 2rem;
+  max-height: 2rem;
+  object-fit: cover;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+.header-title a {
+  display: inline-flex;
+  align-items: center;
+  min-width: 0;
+}
+
+.home[data-posts] .summary .content {
+  display: -webkit-box;
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

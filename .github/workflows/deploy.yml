@@ -9,17 +9,21 @@ jobs:
     runs-on: ubuntu-latest
     name: run
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: setup hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: '0.163.3'
+          extended: true
 
       - name: build
-        run: |
-          git submodule update --init --recursive
-          curl -L https://github.com/gohugoio/hugo/releases/download/v0.111.3/hugo_extended_0.111.3_Linux-64bit.tar.gz | tar xvz
-          sudo mv hugo /usr/bin/hugo
-          hugo
+        run: hugo
 
       - name: push index
-        uses: 0RAJA/algolia-docsearch-upload-action@master
+        uses: 0RAJA/algolia-docsearch-upload-action@v1.2.2
         with:
           ADMIN_API_KEY: ${{ secrets.ADMIN_API_KEY }}
           APPLICATION_ID: ${{ secrets.APPLICATION_ID }}

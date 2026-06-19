@@ -1,6 +1,8 @@
+HUGO ?= hugo
+
 build: # 构建静态文件
-	hugo
+	$(HUGO)
 server: # 开发环境
-	hugo serve
+	$(HUGO) serve
 serve-prod: # 发布环境
-	hugo serve --disableFastRender -e production
+	$(HUGO) serve --disableFastRender -e production
