@@ -21,3 +21,17 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
+@media only screen and (min-width: 1441px) {
+  main[autotoc="true"] .page.single {
+    width: calc(60vw - 1rem);
+    max-width: 1120px;
+  }
+}
+
+@media only screen and (min-width: 1201px) {
+  main[autotoc="false"] .page.single {
+    width: 72%;
+    max-width: 1120px;
+  }
+}
