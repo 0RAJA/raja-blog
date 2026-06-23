@@ -741,7 +741,7 @@ UNSUBSCRIBE [channel [channel ...]] # 指退订给定的频道。
 
 > [原文链接](https://cloud.tencent.com/developer/article/1592432)
 >
-> [Redis Cluster 命令]([Redis%20Cluster日常操作命令梳理%20-%20散尽浮华%20-%20博客园%20(cnblogs.com)](https://www.cnblogs.com/kevingrace/p/7910692.html))
+> [Redis Cluster 命令](https://www.cnblogs.com/kevingrace/p/7910692.html)
 
 ### Redis 集群介绍
 
